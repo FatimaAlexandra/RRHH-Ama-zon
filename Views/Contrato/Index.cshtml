@@ -1,0 +1,25 @@
+﻿@model Contrato 
+<h1>CONTRATOS</h1>
+
+
+<main class="mt-2">
+    <table class="table table-responsive table-bordered table-striped table-danger"> 
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tipo Contrato</th>
+                <th>Correo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Contrato contrato in ViewBag.Contratos)
+            {
+                <tr>
+                    <td>@contrato.Contratoid</td>
+                    <td>@contrato.Tipo</td>
+                    <td>@contrato.Empleado.Correo</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</main>
