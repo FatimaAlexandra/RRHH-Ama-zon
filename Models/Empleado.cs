@@ -5,11 +5,11 @@ namespace amazon.Models;
 
 public partial class Empleado
 {
+    public string Id { get; set; } = null!;
+
     public string Nombre { get; set; } = null!;
 
     public string Correo { get; set; } = null!;
-
-    public string Id { get; set; }
 
     public string FechaNacimiento { get; set; } = null!;
 

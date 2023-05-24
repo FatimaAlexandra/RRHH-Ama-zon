@@ -37,54 +37,48 @@ public partial class DbamazonContext : DbContext
     {
         modelBuilder.Entity<Acuerdo>(entity =>
         {
-            entity.HasKey(e => e.Acuerdoid).HasName("PK__acuerdos__0FE72FFD295A40C4");
+            entity.HasKey(e => e.Id).HasName("PK__acuerdos__3213E83F309F79B0");
 
             entity.ToTable("acuerdos");
 
-            entity.Property(e => e.Acuerdoid)
-                .ValueGeneratedNever()
-                .HasColumnName("acuerdoid");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Contenido)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("contenido");
-            entity.Property(e => e.Contratoid).HasColumnName("contratoid");
+            entity.Property(e => e.IdContrato).HasColumnName("idContrato");
+            entity.Property(e => e.IdPais).HasColumnName("idPais");
             entity.Property(e => e.Nombre)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("nombre");
-            entity.Property(e => e.Paisid).HasColumnName("paisid");
-            entity.Property(e => e.Pivoteid).HasColumnName("pivoteid");
             entity.Property(e => e.Tipo)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("tipo");
 
             entity.HasOne(d => d.Contrato).WithMany(p => p.Acuerdos)
-                .HasForeignKey(d => d.Contratoid)
+                .HasForeignKey(d => d.IdContrato)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__acuerdos__contra__44FF419A");
+                .HasConstraintName("FK__acuerdos__idCont__44FF419A");
 
             entity.HasOne(d => d.Pais).WithMany(p => p.Acuerdos)
-                .HasForeignKey(d => d.Paisid)
+                .HasForeignKey(d => d.IdPais)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__acuerdos__paisid__440B1D61");
+                .HasConstraintName("FK__acuerdos__idPais__440B1D61");
         });
 
         modelBuilder.Entity<Contrato>(entity =>
         {
-            entity.HasKey(e => e.Contratoid).HasName("PK__contrato__F7EE8A46056E8ED3");
+            entity.HasKey(e => e.Id).HasName("PK__contrato__3213E83F4EF2981A");
 
             entity.ToTable("contrato");
 
-            entity.Property(e => e.Contratoid)
-                .ValueGeneratedNever()
-                .HasColumnName("contratoid");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Cargo)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("cargo");
-            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.FechaFin)
                 .HasMaxLength(50)
                 .IsUnicode(false)
@@ -93,25 +87,30 @@ public partial class DbamazonContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("fecha_inicio");
+            entity.Property(e => e.IdEmpleado)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("idEmpleado");
             entity.Property(e => e.Tipo)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("tipo");
 
             entity.HasOne(d => d.Empleado).WithMany(p => p.Contratos)
-                .HasForeignKey(d => d.Id)
+                .HasForeignKey(d => d.IdEmpleado)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__contrato__emplea__412EB0B6");
+                .HasConstraintName("FK__contrato__idEmpl__412EB0B6");
         });
 
         modelBuilder.Entity<Empleado>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__empleado__CCDA5420D385514B");
+            entity.HasKey(e => e.Id).HasName("PK__empleado__3213E83F41E920E3");
 
             entity.ToTable("empleados");
 
             entity.Property(e => e.Id)
                 .HasMaxLength(50)
+                .IsUnicode(false)
                 .HasColumnName("id");
             entity.Property(e => e.Correo)
                 .HasMaxLength(50)
@@ -129,13 +128,11 @@ public partial class DbamazonContext : DbContext
 
         modelBuilder.Entity<Pai>(entity =>
         {
-            entity.HasKey(e => e.Paisid).HasName("PK__pais__456747A30BC7C63E");
+            entity.HasKey(e => e.Id).HasName("PK__pais__3213E83FC9A6A4D9");
 
             entity.ToTable("pais");
 
-            entity.Property(e => e.Paisid)
-                .ValueGeneratedNever()
-                .HasColumnName("paisid");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Idioma)
                 .HasMaxLength(50)
                 .IsUnicode(false)
@@ -148,65 +145,62 @@ public partial class DbamazonContext : DbContext
 
         modelBuilder.Entity<Sede>(entity =>
         {
-            entity.HasKey(e => e.Sedeid).HasName("PK__sede__FFC4AC7790A8BFDA");
+            entity.HasKey(e => e.Id).HasName("PK__sede__3213E83FE6814E3E");
 
             entity.ToTable("sede");
 
-            entity.Property(e => e.Sedeid)
-                .ValueGeneratedNever()
-                .HasColumnName("sedeid");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Codigosede)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("codigosede");
+            entity.Property(e => e.IdPais).HasColumnName("idPais");
             entity.Property(e => e.Nombre)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("nombre");
-            entity.Property(e => e.Paisid).HasColumnName("paisid");
 
-            entity.HasOne(d => d.Pais).WithMany(p => p.Sedes)
-                .HasForeignKey(d => d.Paisid)
+            entity.HasOne(d => d.IdPaisNavigation).WithMany(p => p.Sedes)
+                .HasForeignKey(d => d.IdPais)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__sede__paisid__38996AB5");
+                .HasConstraintName("FK__sede__idPais__38996AB5");
         });
 
         modelBuilder.Entity<Telefono>(entity =>
         {
-            entity.HasKey(e => e.Telefonoid).HasName("PK__telefono__EC01EDD52D7D3ECB");
+            entity.HasKey(e => e.Id).HasName("PK__telefono__3213E83F82E04E9C");
 
             entity.ToTable("telefono");
 
-            entity.Property(e => e.Telefonoid)
-                .ValueGeneratedNever()
-                .HasColumnName("telefonoid");
             entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.IdEmpleado)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("idEmpleado");
+            entity.Property(e => e.IdSede).HasColumnName("idSede");
             entity.Property(e => e.Numero)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("numero");
-            entity.Property(e => e.Sedeid).HasColumnName("sedeid");
 
             entity.HasOne(d => d.Empleado).WithMany(p => p.Telefonos)
-                .HasForeignKey(d => d.Id)
+                .HasForeignKey(d => d.IdEmpleado)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__telefono__emplea__3E52440B");
+                .HasConstraintName("FK__telefono__idEmpl__3E52440B");
 
             entity.HasOne(d => d.Sede).WithMany(p => p.Telefonos)
-                .HasForeignKey(d => d.Sedeid)
+                .HasForeignKey(d => d.IdSede)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__telefono__sedeid__3D5E1FD2");
+                .HasConstraintName("FK__telefono__idSede__3D5E1FD2");
         });
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.IdUsuario).HasName("PK__usuario__645723A6B52DBE9B");
+            entity.HasKey(e => e.IdUsuario).HasName("PK__usuario__645723A6A784EBC9");
 
             entity.ToTable("usuario");
 
-            entity.Property(e => e.IdUsuario)
-                .ValueGeneratedNever()
-                .HasColumnName("idUsuario");
+            entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");
             entity.Property(e => e.Pass)
                 .HasMaxLength(50)
                 .IsUnicode(false)

@@ -1,17 +1,25 @@
 ﻿
-<h1>EMPLEADOS</h1>
+<div class="text-center">
+<h1 class="display-4">EMPLEADOS</h1>
+</div>
 
-<main class="mt-2">
-    <table class="table table-responsive table-bordered table-striped table-danger">
+<main class="mt-2 container">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Buscar empleado" id="searchInput">
+        <div class="input-group-append">
+            <button class="btn btn-warning text-dark" type="button" id="searchButton">Buscar</button>
+        </div>
+    </div>
+    <table class="table table-responsive table-bordered table-striped table-primary table-hover" id="contractsTable">
         <thead class="table-dark">
             <tr>
-                <th>ID</th>
+                <th>Cedula</th>
                 <th>Nombre</th>
                 <th>Correo</th>
                 <th>Nacimiento</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="tableBody">
             @foreach (Empleado empleado in ViewBag.Empleados)
             {
                 <tr>
@@ -23,5 +31,21 @@
             }
         </tbody>
     </table>
-
 </main>
+
+<script>
+    document.getElementById("searchButton").addEventListener("click", function () {
+        var input = document.getElementById("searchInput").value.toLowerCase();
+        var rows = document.getElementById("tableBody").getElementsByTagName("tr");
+
+        for (var i = 0; i < rows.length; i++) {
+            var rowData = rows[i].textContent.toLowerCase();
+
+            if (rowData.indexOf(input) > -1) {
+                rows[i].style.display = "";
+            } else {
+                rows[i].style.display = "none";
+            }
+        }
+    });
+</script>

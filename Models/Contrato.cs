@@ -5,15 +5,15 @@ namespace amazon.Models;
 
 public partial class Contrato
 {
+    public int Id { get; set; }
+
     public string FechaInicio { get; set; } = null!;
 
     public string FechaFin { get; set; } = null!;
 
     public string Tipo { get; set; } = null!;
 
-    public int Contratoid { get; set; }
-
-    public string Id { get; set; }
+    public string IdEmpleado { get; set; } = null!;
 
     public string Cargo { get; set; } = null!;
 

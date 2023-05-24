@@ -5,9 +5,9 @@ namespace amazon.Models;
 
 public partial class Pai
 {
-    public string Nombre { get; set; } = null!;
+    public int Id { get; set; }
 
-    public int Paisid { get; set; }
+    public string Nombre { get; set; } = null!;
 
     public string Idioma { get; set; } = null!;
 

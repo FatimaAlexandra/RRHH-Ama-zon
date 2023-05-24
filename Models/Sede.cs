@@ -5,15 +5,15 @@ namespace amazon.Models;
 
 public partial class Sede
 {
-    public string Nombre { get; set; } = null!;
+    public int Id { get; set; }
 
-    public int Sedeid { get; set; }
+    public string Nombre { get; set; } = null!;
 
     public string Codigosede { get; set; } = null!;
 
-    public int Paisid { get; set; }
+    public int IdPais { get; set; }
 
-    public virtual Pai Pais { get; set; } = null!;
+    public virtual Pai IdPaisNavigation { get; set; } = null!;
 
     public virtual ICollection<Telefono> Telefonos { get; set; } = new List<Telefono>();
 }

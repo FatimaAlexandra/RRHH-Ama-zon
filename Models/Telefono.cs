@@ -5,13 +5,13 @@ namespace amazon.Models;
 
 public partial class Telefono
 {
-    public int Telefonoid { get; set; }
+    public int Id { get; set; }
 
     public string Numero { get; set; } = null!;
 
-    public int Sedeid { get; set; }
+    public int IdSede { get; set; }
 
-    public string Id { get; set; }
+    public string IdEmpleado { get; set; } = null!;
 
     public virtual Empleado Empleado { get; set; } = null!;
 

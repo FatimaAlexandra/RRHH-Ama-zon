@@ -1,52 +1,36 @@
-﻿@model Contrato 
-<h1>CONTRATOS</h1>
+﻿@model Contrato
+<div class="text-center">
+<h1 class="display-4">CONTRATOS</h1>
+</div>
 
-
-@*<main class="mt-2">
-    <table class="table table-responsive table-bordered table-striped table-danger"> 
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Tipo Contrato</th>
-                <th>Correo</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (Contrato contrato in ViewBag.Contratos)
-            {
-                <tr>
-                    <td>@contrato.Contratoid</td>
-                    <td>@contrato.Tipo</td>
-                    <td>@contrato.Empleado.Correo</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-</main>
-*@
-
-<main class="mt-2">
+<main class="mt-2 container text-center">
     <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Buscar por tipo de contrato" id="searchInput">
         <div class="input-group-append">
-            <button class="btn btn-primary" type="button" id="searchButton">Buscar</button>
+            <button class="btn btn-warning" type="button" id="searchButton">Buscar</button>
         </div>
     </div>
-    <table class="table table-responsive table-bordered table-striped table-danger" id="contractsTable">
-        <thead>
+    <table class="table table-responsive table-bordered table-striped table-primary table-hover" id="contractsTable">
+        <thead class="table-dark">
             <tr>
-                <th>ID</th>
+                <th>Cedula</th>
+                <th>Nombre Empleado</th>
                 <th>Tipo Contrato</th>
-                <th>Correo</th>
+                <th>Fecha Inicio</th>
+                <th>Fecha Fin</th>
+                <th>Cargo</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="tableBody">
             @foreach (Contrato contrato in ViewBag.Contratos)
             {
                 <tr>
-                    <td>@contrato.Contratoid</td>
+                    <td>@contrato.Empleado.Id </td>
+                    <td>@contrato.Empleado.Nombre</td>
                     <td>@contrato.Tipo</td>
-                    <td>@contrato.Empleado.Correo</td>
+                    <td>@contrato.FechaInicio</td>
+                    <td>@contrato.FechaFin</td>
+                    <td>@contrato.Cargo</td>
                 </tr>
             }
         </tbody>
@@ -54,25 +38,20 @@
 </main>
 
 <script>
+    //busca pero por medio de tipo de contrato
     document.getElementById("searchButton").addEventListener("click", function () {
         var input = document.getElementById("searchInput").value.toLowerCase();
         var table = document.getElementById("contractsTable");
         var rows = table.getElementsByTagName("tr");
 
         for (var i = 0; i < rows.length; i++) {
-            var cells = rows[i].getElementsByTagName("td");
-            var match = false;
+            var rowData = rows[i].textContent.toLowerCase();
 
-            for (var j = 0; j < cells.length; j++) {
-                var cellValue = cells[j].textContent || cells[j].innerText;
-
-                if (cellValue.toLowerCase().indexOf(input) > -1) {
-                    match = true;
-                    break;
-                }
+            if (rowData.indexOf(input) > -1) {
+                rows[i].style.display = "";
+            } else {
+                rows[i].style.display = "none";
             }
-
-            rows[i].style.display = match ? "" : "none";
         }
     });
 </script>

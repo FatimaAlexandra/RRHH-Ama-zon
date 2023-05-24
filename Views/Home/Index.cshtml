@@ -1,12 +1,53 @@
 ﻿
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4">BIENVENIDOS/AS</h1>
 </div>
-<h1>INFORMACIÓN DE EMPLEADOS EN EL SISTEMA</h1>
+@*<h1>INFORMACIÓN DE EMPLEADOS EN EL SISTEMA</h1>
 
 <p>Buscar empleado para generar acuerdo</p>
 <form action="@Url.Action("Buscar", "Controlador")" method="GET">
     <input type="text" name="q" placeholder="Buscar..." />
     <button type="submit">Buscar</button>
-</form>
+</form>*@
+
+
+<main class="mt-4">
+    <div class="input-group mb-4">
+        <input type="text" class="form-control mx-sm-5" placeholder="Buscar empleado en el sistema" id="searchInput">
+        <div class="input-group-append">
+            <button class="btn btn-primary mx-sm-1" type="button" id="searchButton">Buscar</button>
+        </div>
+    </div>
+    <table class="table table-responsive table-bordered table-striped table-danger" id="employeeTable">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Nacimiento</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- Los empleados se agregarán dinámicamente después de la búsqueda -->
+        </tbody>
+    </table>
+</main>
+
+<script>
+    document.getElementById("searchButton").addEventListener("click", function () {
+        var input = document.getElementById("searchInput").value.toLowerCase();
+        var table = document.getElementById("employeeTable");
+        var rows = table.getElementsByTagName("tr");
+
+        for (var i = 0; i < rows.length; i++) {
+            var rowData = rows[i].textContent.toLowerCase();
+
+            if (rowData.indexOf(input) > -1) {
+                rows[i].style.display = "";
+            } else {
+                rows[i].style.display = "none";
+            }
+        }
+    });
+</script>
