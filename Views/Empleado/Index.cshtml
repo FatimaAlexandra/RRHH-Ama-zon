@@ -1,0 +1,27 @@
+﻿
+<h1>EMPLEADOS</h1>
+
+<main class="mt-2">
+    <table class="table table-responsive table-bordered table-striped table-danger">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Nacimiento</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Empleado empleado in ViewBag.Empleados)
+            {
+                <tr>
+                    <td>@empleado.Id</td>
+                    <td>@empleado.Nombre</td>
+                    <td>@empleado.Correo</td>
+                    <td>@empleado.FechaNacimiento</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</main>

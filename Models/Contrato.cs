@@ -13,9 +13,7 @@ public partial class Contrato
 
     public int Contratoid { get; set; }
 
-    public int Empleadoid { get; set; }
-
-    public int Pivoteid { get; set; }
+    public string Id { get; set; }
 
     public string Cargo { get; set; } = null!;
 

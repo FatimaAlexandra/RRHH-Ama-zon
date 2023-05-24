@@ -84,7 +84,7 @@ public partial class DbamazonContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("cargo");
-            entity.Property(e => e.Empleadoid).HasColumnName("empleadoid");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.FechaFin)
                 .HasMaxLength(50)
                 .IsUnicode(false)
@@ -93,27 +93,26 @@ public partial class DbamazonContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("fecha_inicio");
-            entity.Property(e => e.Pivoteid).HasColumnName("pivoteid");
             entity.Property(e => e.Tipo)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("tipo");
 
             entity.HasOne(d => d.Empleado).WithMany(p => p.Contratos)
-                .HasForeignKey(d => d.Empleadoid)
+                .HasForeignKey(d => d.Id)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__contrato__emplea__412EB0B6");
         });
 
         modelBuilder.Entity<Empleado>(entity =>
         {
-            entity.HasKey(e => e.Empleadoid).HasName("PK__empleado__CCDA5420D385514B");
+            entity.HasKey(e => e.Id).HasName("PK__empleado__CCDA5420D385514B");
 
             entity.ToTable("empleados");
 
-            entity.Property(e => e.Empleadoid)
-                .ValueGeneratedNever()
-                .HasColumnName("empleadoid");
+            entity.Property(e => e.Id)
+                .HasMaxLength(50)
+                .HasColumnName("id");
             entity.Property(e => e.Correo)
                 .HasMaxLength(50)
                 .IsUnicode(false)
@@ -181,7 +180,7 @@ public partial class DbamazonContext : DbContext
             entity.Property(e => e.Telefonoid)
                 .ValueGeneratedNever()
                 .HasColumnName("telefonoid");
-            entity.Property(e => e.Empleadoid).HasColumnName("empleadoid");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Numero)
                 .HasMaxLength(50)
                 .IsUnicode(false)
@@ -189,7 +188,7 @@ public partial class DbamazonContext : DbContext
             entity.Property(e => e.Sedeid).HasColumnName("sedeid");
 
             entity.HasOne(d => d.Empleado).WithMany(p => p.Telefonos)
-                .HasForeignKey(d => d.Empleadoid)
+                .HasForeignKey(d => d.Id)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__telefono__emplea__3E52440B");
 

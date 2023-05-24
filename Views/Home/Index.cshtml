@@ -3,3 +3,10 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
 </div>
+<h1>INFORMACIÓN DE EMPLEADOS EN EL SISTEMA</h1>
+
+<p>Buscar empleado para generar acuerdo</p>
+<form action="@Url.Action("Buscar", "Controlador")" method="GET">
+    <input type="text" name="q" placeholder="Buscar..." />
+    <button type="submit">Buscar</button>
+</form>

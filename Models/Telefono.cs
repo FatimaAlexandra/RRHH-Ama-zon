@@ -11,7 +11,7 @@ public partial class Telefono
 
     public int Sedeid { get; set; }
 
-    public int Empleadoid { get; set; }
+    public string Id { get; set; }
 
     public virtual Empleado Empleado { get; set; } = null!;
 

@@ -9,7 +9,7 @@ public partial class Empleado
 
     public string Correo { get; set; } = null!;
 
-    public int Empleadoid { get; set; }
+    public string Id { get; set; }
 
     public string FechaNacimiento { get; set; } = null!;
 
