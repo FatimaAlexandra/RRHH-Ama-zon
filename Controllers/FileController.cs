@@ -32,15 +32,15 @@ namespace amazon.Controllers
                         _context.Empleados.Add(empleado);
                         _context.SaveChanges();
 
-                        Contrato contrato = new Contrato();
+                       /* Contrato contrato = new Contrato();
                         contrato.FechaInicio = valores[4];
                         contrato.FechaFin = valores[5];
                         contrato.Tipo = valores[6];
-                        contrato.Id = empleado.Id;
-                        contrato.Cargo = valores[7];
+                        contrato.Id = valores[7];
+                        contrato.Cargo = valores[8];
 
 
-                        _context.Contratos.Add(contrato);
+                        _context.Contratos.Add(contrato);*/
                     }
                 }
 

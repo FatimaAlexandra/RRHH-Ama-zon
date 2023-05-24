@@ -1,7 +1,15 @@
 ﻿
 
-<p>Cargar archivo de empleados</p>
-<form asp-action="CargarArchivo" asp-controller="File" method="post" enctype="multipart/form-data">
-    <input type="file" name="archivo" />
-    <button type="submit">Cargar archivo</button>
-</form>
+<main class="mt-2">
+
+<div class="container">
+    <h3 class="mt-4 mb-3">Cargar archivo de empleados</h3>
+    <form asp-action="CargarArchivo" asp-controller="File" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="archivo">Seleccionar archivo:</label>
+            <input type="file" class="form-control-file" name="archivo" id="archivo" />
+        </div><br />
+        <button type="submit" class="btn btn-primary">Cargar archivo</button>
+    </form>
+</div>
+</main>
