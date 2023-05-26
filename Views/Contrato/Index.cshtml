@@ -10,7 +10,7 @@
             <button class="btn btn-warning" type="button" id="searchButton">Buscar</button>
         </div>
     </div>
-    <table class="table table-responsive table-bordered table-striped table-primary table-hover" id="contractsTable">
+    <table id="tabla_contratos" class="table table-responsive table-bordered table-striped table-primary table-hover" id="contractsTable">
         <thead class="table-dark">
             <tr>
                 <th>Cedula</th>
@@ -55,3 +55,20 @@
         }
     });
 </script>
+
+@section Scripts {
+    <script>
+        $("#tabla_contratos").DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
+            },
+            "responsive": true,
+            "dom": 'Bfrtip',
+            initComplete: function () {
+                
+                // Clonet thead on tfoot datatable
+                $("#tabla_contratos thead tr").clone().appendTo($("#tabla_contratos tfoot"));
+            },
+        });
+    </script>
+}
