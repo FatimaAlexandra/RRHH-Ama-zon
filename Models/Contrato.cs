@@ -7,17 +7,15 @@ public partial class Contrato
 {
     public int Id { get; set; }
 
-    public string FechaInicio { get; set; } = null!;
+    public DateTime FechaInicio { get; set; }
 
-    public string FechaFin { get; set; } = null!;
-
-    public string Tipo { get; set; } = null!;
-
-    public string IdEmpleado { get; set; } = null!;
+    public DateTime FechaFin { get; set; }
 
     public string Cargo { get; set; } = null!;
 
-    public virtual ICollection<Acuerdo> Acuerdos { get; set; } = new List<Acuerdo>();
+    public int Acuerdoid { get; set; }
 
-    public virtual Empleado Empleado { get; set; } = null!;
+    public virtual Acuerdo Acuerdo { get; set; } = null!;
+
+    public virtual ICollection<Empleado> Empleados { get; set; } = new List<Empleado>();
 }

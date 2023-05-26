@@ -19,13 +19,13 @@ public partial class DbamazonContext : DbContext
 
     public virtual DbSet<Contrato> Contratos { get; set; }
 
+    public virtual DbSet<Documento> Documentos { get; set; }
+
     public virtual DbSet<Empleado> Empleados { get; set; }
 
-    public virtual DbSet<Pai> Pais { get; set; }
+    public virtual DbSet<Paise> Paises { get; set; }
 
     public virtual DbSet<Sede> Sedes { get; set; }
-
-    public virtual DbSet<Telefono> Telefonos { get; set; }
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
@@ -37,174 +37,191 @@ public partial class DbamazonContext : DbContext
     {
         modelBuilder.Entity<Acuerdo>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__acuerdos__3213E83F309F79B0");
+            entity.HasKey(e => e.Id).HasName("PK__acuerdos__3213E83F83BCF7B7");
 
             entity.ToTable("acuerdos");
 
-            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Id)
+                .ValueGeneratedNever()
+                .HasColumnName("id");
             entity.Property(e => e.Contenido)
-                .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("contenido");
-            entity.Property(e => e.IdContrato).HasColumnName("idContrato");
-            entity.Property(e => e.IdPais).HasColumnName("idPais");
             entity.Property(e => e.Nombre)
-                .HasMaxLength(50)
+                .HasMaxLength(255)
                 .IsUnicode(false)
                 .HasColumnName("nombre");
+            entity.Property(e => e.Paisid).HasColumnName("paisid");
             entity.Property(e => e.Tipo)
-                .HasMaxLength(50)
+                .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("tipo");
 
-            entity.HasOne(d => d.Contrato).WithMany(p => p.Acuerdos)
-                .HasForeignKey(d => d.IdContrato)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__acuerdos__idCont__44FF419A");
-
             entity.HasOne(d => d.Pais).WithMany(p => p.Acuerdos)
-                .HasForeignKey(d => d.IdPais)
+                .HasForeignKey(d => d.Paisid)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__acuerdos__idPais__440B1D61");
+                .HasConstraintName("FK__acuerdos__paisid__3B75D760");
         });
 
         modelBuilder.Entity<Contrato>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__contrato__3213E83F4EF2981A");
+            entity.HasKey(e => e.Id).HasName("PK__contrato__3213E83F91825AB2");
 
-            entity.ToTable("contrato");
+            entity.ToTable("contratos");
 
-            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Id)
+                .ValueGeneratedNever()
+                .HasColumnName("id");
+            entity.Property(e => e.Acuerdoid).HasColumnName("acuerdoid");
             entity.Property(e => e.Cargo)
-                .HasMaxLength(50)
+                .HasMaxLength(255)
                 .IsUnicode(false)
                 .HasColumnName("cargo");
             entity.Property(e => e.FechaFin)
-                .HasMaxLength(50)
-                .IsUnicode(false)
+                .HasColumnType("date")
                 .HasColumnName("fecha_fin");
             entity.Property(e => e.FechaInicio)
-                .HasMaxLength(50)
-                .IsUnicode(false)
+                .HasColumnType("date")
                 .HasColumnName("fecha_inicio");
-            entity.Property(e => e.IdEmpleado)
-                .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("idEmpleado");
-            entity.Property(e => e.Tipo)
-                .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("tipo");
 
-            entity.HasOne(d => d.Empleado).WithMany(p => p.Contratos)
-                .HasForeignKey(d => d.IdEmpleado)
+            entity.HasOne(d => d.Acuerdo).WithMany(p => p.Contratos)
+                .HasForeignKey(d => d.Acuerdoid)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__contrato__idEmpl__412EB0B6");
+                .HasConstraintName("FK__contratos__acuer__3E52440B");
+        });
+
+        modelBuilder.Entity<Documento>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__document__3213E83F7B621D32");
+
+            entity.ToTable("documentos");
+
+            entity.Property(e => e.Id)
+                .ValueGeneratedNever()
+                .HasColumnName("id");
+            entity.Property(e => e.NumeroDocumento)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("numero_documento");
+            entity.Property(e => e.TipoDocumento)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("tipo_documento");
         });
 
         modelBuilder.Entity<Empleado>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__empleado__3213E83F41E920E3");
+            entity.HasKey(e => e.Id).HasName("PK__empleado__3213E83F80C12491");
 
             entity.ToTable("empleados");
 
             entity.Property(e => e.Id)
-                .HasMaxLength(50)
-                .IsUnicode(false)
+                .ValueGeneratedNever()
                 .HasColumnName("id");
+            entity.Property(e => e.Contratoid).HasColumnName("contratoid");
             entity.Property(e => e.Correo)
-                .HasMaxLength(50)
+                .HasMaxLength(255)
                 .IsUnicode(false)
                 .HasColumnName("correo");
-            entity.Property(e => e.FechaNacimiento)
-                .HasMaxLength(50)
+            entity.Property(e => e.Direccion)
+                .HasMaxLength(255)
                 .IsUnicode(false)
+                .HasColumnName("direccion");
+            entity.Property(e => e.Documentoid).HasColumnName("documentoid");
+            entity.Property(e => e.FechaNacimiento)
+                .HasColumnType("date")
                 .HasColumnName("fecha_nacimiento");
             entity.Property(e => e.Nombre)
-                .HasMaxLength(50)
+                .HasMaxLength(255)
                 .IsUnicode(false)
                 .HasColumnName("nombre");
+            entity.Property(e => e.Sedeid).HasColumnName("sedeid");
+            entity.Property(e => e.Telefono)
+                .HasMaxLength(25)
+                .IsUnicode(false)
+                .HasColumnName("telefono");
+
+            entity.HasOne(d => d.Contrato).WithMany(p => p.Empleados)
+                .HasForeignKey(d => d.Contratoid)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__empleados__contr__45F365D3");
+
+            entity.HasOne(d => d.Documento).WithMany(p => p.Empleados)
+                .HasForeignKey(d => d.Documentoid)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__empleados__docum__46E78A0C");
+
+            entity.HasOne(d => d.Sede).WithMany(p => p.Empleados)
+                .HasForeignKey(d => d.Sedeid)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__empleados__sedei__44FF419A");
         });
 
-        modelBuilder.Entity<Pai>(entity =>
+        modelBuilder.Entity<Paise>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__pais__3213E83FC9A6A4D9");
+            entity.HasKey(e => e.Id).HasName("PK__paises__3213E83FF4EC3DDA");
 
-            entity.ToTable("pais");
+            entity.ToTable("paises");
 
-            entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.Idioma)
-                .HasMaxLength(50)
+            entity.Property(e => e.Id)
+                .ValueGeneratedNever()
+                .HasColumnName("id");
+            entity.Property(e => e.Isocode)
+                .HasMaxLength(10)
                 .IsUnicode(false)
-                .HasColumnName("idioma");
+                .HasColumnName("isocode");
             entity.Property(e => e.Nombre)
-                .HasMaxLength(50)
+                .HasMaxLength(255)
                 .IsUnicode(false)
                 .HasColumnName("nombre");
         });
 
         modelBuilder.Entity<Sede>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__sede__3213E83FE6814E3E");
+            entity.HasKey(e => e.Id).HasName("PK__sedes__3213E83F23C2B816");
 
-            entity.ToTable("sede");
+            entity.ToTable("sedes");
 
-            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Id)
+                .ValueGeneratedNever()
+                .HasColumnName("id");
             entity.Property(e => e.Codigosede)
-                .HasMaxLength(50)
+                .HasMaxLength(25)
                 .IsUnicode(false)
                 .HasColumnName("codigosede");
-            entity.Property(e => e.IdPais).HasColumnName("idPais");
+            entity.Property(e => e.Logo)
+                .HasMaxLength(255)
+                .IsUnicode(false)
+                .HasColumnName("logo");
             entity.Property(e => e.Nombre)
-                .HasMaxLength(50)
+                .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("nombre");
+            entity.Property(e => e.Paisid).HasColumnName("paisid");
 
-            entity.HasOne(d => d.IdPaisNavigation).WithMany(p => p.Sedes)
-                .HasForeignKey(d => d.IdPais)
+            entity.HasOne(d => d.Pais).WithMany(p => p.Sedes)
+                .HasForeignKey(d => d.Paisid)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__sede__idPais__38996AB5");
-        });
-
-        modelBuilder.Entity<Telefono>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK__telefono__3213E83F82E04E9C");
-
-            entity.ToTable("telefono");
-
-            entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.IdEmpleado)
-                .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("idEmpleado");
-            entity.Property(e => e.IdSede).HasColumnName("idSede");
-            entity.Property(e => e.Numero)
-                .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("numero");
-
-            entity.HasOne(d => d.Empleado).WithMany(p => p.Telefonos)
-                .HasForeignKey(d => d.IdEmpleado)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__telefono__idEmpl__3E52440B");
-
-            entity.HasOne(d => d.Sede).WithMany(p => p.Telefonos)
-                .HasForeignKey(d => d.IdSede)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__telefono__idSede__3D5E1FD2");
+                .HasConstraintName("FK__sedes__paisid__38996AB5");
         });
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.IdUsuario).HasName("PK__usuario__645723A6A784EBC9");
+            entity.HasKey(e => e.Id).HasName("PK__usuarios__3213E83FBDB29ABD");
 
-            entity.ToTable("usuario");
+            entity.ToTable("usuarios");
 
-            entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");
-            entity.Property(e => e.Pass)
-                .HasMaxLength(50)
+            entity.Property(e => e.Id)
+                .ValueGeneratedNever()
+                .HasColumnName("id");
+            entity.Property(e => e.Clave)
+                .HasMaxLength(255)
                 .IsUnicode(false)
-                .HasColumnName("pass");
+                .HasColumnName("clave");
+            entity.Property(e => e.Nombre)
+                .HasMaxLength(255)
+                .IsUnicode(false)
+                .HasColumnName("nombre");
             entity.Property(e => e.Rol).HasColumnName("rol");
             entity.Property(e => e.Usuario1)
                 .HasMaxLength(50)

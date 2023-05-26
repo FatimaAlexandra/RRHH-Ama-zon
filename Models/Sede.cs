@@ -7,13 +7,15 @@ public partial class Sede
 {
     public int Id { get; set; }
 
+    public string Logo { get; set; } = null!;
+
     public string Nombre { get; set; } = null!;
 
     public string Codigosede { get; set; } = null!;
 
-    public int IdPais { get; set; }
+    public int Paisid { get; set; }
 
-    public virtual Pai IdPaisNavigation { get; set; } = null!;
+    public virtual ICollection<Empleado> Empleados { get; set; } = new List<Empleado>();
 
-    public virtual ICollection<Telefono> Telefonos { get; set; } = new List<Telefono>();
+    public virtual Paise Pais { get; set; } = null!;
 }

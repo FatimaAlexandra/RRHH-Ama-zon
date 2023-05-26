@@ -17,8 +17,1328 @@
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.bootstrap4.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.bootstrap4.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.bootstrap4.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.bootstrap4.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.bootstrap5.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.bootstrap5.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.bootstrap5.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.bulma.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.bulma.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.bulma.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.bulma.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.dataTables.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.dataTables.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.dataTables.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.dataTables.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.foundation.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.foundation.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.foundation.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.foundation.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.jqueryui.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.jqueryui.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.jqueryui.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.jqueryui.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.semanticui.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.semanticui.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.semanticui.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\css\\autoFill.semanticui.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.bootstrap4.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.bootstrap4.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.bootstrap4.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.bootstrap4.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.bootstrap5.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.bootstrap5.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.bootstrap5.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.bootstrap5.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.bulma.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.bulma.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.bulma.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.bulma.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.dataTables.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.dataTables.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.dataTables.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.dataTables.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.foundation.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.foundation.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.foundation.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.foundation.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.jqueryui.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.jqueryui.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.jqueryui.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.jqueryui.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.semanticui.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.semanticui.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.semanticui.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\js\\autoFill.semanticui.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\js\\dataTables.autoFill.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\js\\dataTables.autoFill.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\AutoFill-2.5.3\\js\\dataTables.autoFill.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\AutoFill-2.5.3\\js\\dataTables.autoFill.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.bootstrap4.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.bootstrap4.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.bootstrap4.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.bootstrap4.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.bootstrap5.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.bootstrap5.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.bootstrap5.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.bulma.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.bulma.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.bulma.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.bulma.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.dataTables.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.dataTables.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.dataTables.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.dataTables.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.foundation.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.foundation.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.foundation.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.foundation.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.jqueryui.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.jqueryui.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.jqueryui.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.jqueryui.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.semanticui.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.semanticui.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.semanticui.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.semanticui.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\css\\common.scss",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\css\\common.scss"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\css\\mixins.scss",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\css\\mixins.scss"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.bootstrap4.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.bootstrap4.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.bootstrap4.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.bootstrap4.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.bootstrap5.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.bootstrap5.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.bootstrap5.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.bootstrap5.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.bulma.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.bulma.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.bulma.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.bulma.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.colVis.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.colVis.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.colVis.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.colVis.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.dataTables.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.dataTables.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.dataTables.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.dataTables.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.foundation.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.foundation.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.foundation.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.foundation.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.html5.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.html5.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.html5.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.html5.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.jqueryui.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.jqueryui.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.jqueryui.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.jqueryui.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.print.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.print.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.print.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.print.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.semanticui.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.semanticui.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.semanticui.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\js\\buttons.semanticui.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\js\\dataTables.buttons.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\js\\dataTables.buttons.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\js\\dataTables.buttons.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\js\\dataTables.buttons.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.bootstrap4.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.bootstrap4.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.bootstrap4.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.bootstrap4.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.bootstrap5.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.bootstrap5.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.bootstrap5.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.bulma.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.bulma.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.bulma.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.bulma.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.dataTables.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.dataTables.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.dataTables.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.dataTables.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.foundation.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.foundation.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.foundation.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.foundation.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.jqueryui.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.jqueryui.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.jqueryui.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.jqueryui.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.semanticui.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.semanticui.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.semanticui.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\css\\colReorder.semanticui.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.bootstrap4.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.bootstrap4.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.bootstrap4.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.bootstrap4.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.bootstrap5.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.bootstrap5.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.bootstrap5.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.bootstrap5.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.bulma.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.bulma.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.bulma.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.bulma.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.dataTables.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.dataTables.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.dataTables.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.dataTables.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.foundation.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.foundation.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.foundation.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.foundation.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.jqueryui.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.jqueryui.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.jqueryui.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.jqueryui.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.semanticui.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.semanticui.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.semanticui.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\js\\colReorder.semanticui.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\js\\dataTables.colReorder.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\js\\dataTables.colReorder.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\ColReorder-1.6.2\\js\\dataTables.colReorder.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\ColReorder-1.6.2\\js\\dataTables.colReorder.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.bootstrap4.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.bootstrap4.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.bootstrap4.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.bootstrap4.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.bootstrap5.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.bootstrap5.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.bootstrap5.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.bulma.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.bulma.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.bulma.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.bulma.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.dataTables.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.dataTables.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.dataTables.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.dataTables.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.foundation.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.foundation.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.foundation.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.foundation.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.jqueryui.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.jqueryui.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.jqueryui.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.jqueryui.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.semanticui.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.semanticui.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.semanticui.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\css\\dataTables.semanticui.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\css\\jquery.dataTables.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\css\\jquery.dataTables.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\css\\jquery.dataTables.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\css\\jquery.dataTables.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\images\\sort_asc.png",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\images\\sort_asc.png"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\images\\sort_asc_disabled.png",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\images\\sort_asc_disabled.png"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\images\\sort_both.png",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\images\\sort_both.png"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\images\\sort_desc.png",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\images\\sort_desc.png"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\images\\sort_desc_disabled.png",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\images\\sort_desc_disabled.png"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.bootstrap4.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.bootstrap4.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.bootstrap4.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.bootstrap4.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.bootstrap5.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.bootstrap5.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.bootstrap5.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.bootstrap5.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.bulma.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.bulma.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.bulma.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.bulma.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.dataTables.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.dataTables.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.dataTables.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.dataTables.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.foundation.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.foundation.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.foundation.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.foundation.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.jqueryui.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.jqueryui.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.jqueryui.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.jqueryui.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.semanticui.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.semanticui.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.semanticui.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\js\\dataTables.semanticui.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\js\\jquery.dataTables.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\js\\jquery.dataTables.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DataTables-1.13.4\\js\\jquery.dataTables.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DataTables-1.13.4\\js\\jquery.dataTables.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DateTime-1.4.1\\css\\dataTables.dateTime.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DateTime-1.4.1\\css\\dataTables.dateTime.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DateTime-1.4.1\\css\\dataTables.dateTime.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DateTime-1.4.1\\css\\dataTables.dateTime.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DateTime-1.4.1\\js\\dataTables.dateTime.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DateTime-1.4.1\\js\\dataTables.dateTime.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\DateTime-1.4.1\\js\\dataTables.dateTime.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\DateTime-1.4.1\\js\\dataTables.dateTime.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.bootstrap4.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.bootstrap4.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.bootstrap4.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.bootstrap4.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.bootstrap5.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.bootstrap5.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.bootstrap5.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.bulma.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.bulma.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.bulma.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.bulma.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.dataTables.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.dataTables.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.dataTables.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.dataTables.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.foundation.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.foundation.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.foundation.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.foundation.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.jqueryui.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.jqueryui.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.jqueryui.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.jqueryui.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.semanticui.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.semanticui.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.semanticui.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\css\\fixedColumns.semanticui.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\js\\dataTables.fixedColumns.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\js\\dataTables.fixedColumns.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\js\\dataTables.fixedColumns.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\js\\dataTables.fixedColumns.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.bootstrap4.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.bootstrap4.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.bootstrap4.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.bootstrap4.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.bootstrap5.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.bootstrap5.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.bootstrap5.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.bootstrap5.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.bulma.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.bulma.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.bulma.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.bulma.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.dataTables.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.dataTables.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.dataTables.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.dataTables.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.foundation.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.foundation.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.foundation.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.foundation.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.jqueryui.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.jqueryui.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.jqueryui.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.jqueryui.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.semanticui.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.semanticui.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.semanticui.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedColumns-4.2.2\\js\\fixedColumns.semanticui.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.bootstrap4.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.bootstrap4.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.bootstrap4.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.bootstrap4.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.bootstrap5.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.bootstrap5.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.bootstrap5.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.bulma.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.bulma.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.bulma.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.bulma.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.dataTables.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.dataTables.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.dataTables.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.dataTables.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.foundation.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.foundation.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.foundation.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.foundation.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.jqueryui.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.jqueryui.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.jqueryui.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.jqueryui.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.semanticui.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.semanticui.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.semanticui.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\css\\fixedHeader.semanticui.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\js\\dataTables.fixedHeader.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\js\\dataTables.fixedHeader.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\js\\dataTables.fixedHeader.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\js\\dataTables.fixedHeader.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.bootstrap4.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.bootstrap4.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.bootstrap4.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.bootstrap4.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.bootstrap5.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.bootstrap5.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.bootstrap5.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.bootstrap5.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.bulma.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.bulma.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.bulma.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.bulma.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.dataTables.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.dataTables.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.dataTables.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.dataTables.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.foundation.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.foundation.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.foundation.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.foundation.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.jqueryui.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.jqueryui.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.jqueryui.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.jqueryui.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.semanticui.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.semanticui.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.semanticui.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\FixedHeader-3.3.2\\js\\fixedHeader.semanticui.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.bootstrap4.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.bootstrap4.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.bootstrap4.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.bootstrap4.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.bootstrap5.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.bootstrap5.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.bootstrap5.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.bulma.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.bulma.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.bulma.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.bulma.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.dataTables.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.dataTables.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.dataTables.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.dataTables.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.foundation.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.foundation.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.foundation.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.foundation.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.jqueryui.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.jqueryui.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.jqueryui.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.jqueryui.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.semanticui.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.semanticui.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.semanticui.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\css\\responsive.semanticui.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\js\\dataTables.responsive.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\js\\dataTables.responsive.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\js\\dataTables.responsive.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\js\\dataTables.responsive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.bootstrap4.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.bootstrap4.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.bootstrap4.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.bootstrap4.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.bootstrap5.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.bootstrap5.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.bootstrap5.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.bootstrap5.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.bulma.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.bulma.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.bulma.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.bulma.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.dataTables.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.dataTables.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.dataTables.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.dataTables.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.foundation.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.foundation.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.foundation.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.foundation.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.jqueryui.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.jqueryui.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.jqueryui.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.jqueryui.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.semanticui.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.semanticui.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.semanticui.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Responsive-2.4.1\\js\\responsive.semanticui.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\css\\select.bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\css\\select.bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\css\\select.bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\css\\select.bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\css\\select.bootstrap4.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\css\\select.bootstrap4.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\css\\select.bootstrap4.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\css\\select.bootstrap4.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\css\\select.bootstrap5.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\css\\select.bootstrap5.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\css\\select.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\css\\select.bootstrap5.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\css\\select.bulma.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\css\\select.bulma.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\css\\select.bulma.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\css\\select.bulma.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\css\\select.dataTables.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\css\\select.dataTables.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\css\\select.dataTables.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\css\\select.dataTables.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\css\\select.foundation.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\css\\select.foundation.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\css\\select.foundation.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\css\\select.foundation.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\css\\select.jqueryui.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\css\\select.jqueryui.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\css\\select.jqueryui.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\css\\select.jqueryui.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\css\\select.semanticui.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\css\\select.semanticui.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\css\\select.semanticui.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\css\\select.semanticui.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\js\\dataTables.select.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\js\\dataTables.select.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\js\\dataTables.select.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\js\\dataTables.select.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\js\\select.bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\js\\select.bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\js\\select.bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\js\\select.bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\js\\select.bootstrap4.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\js\\select.bootstrap4.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\js\\select.bootstrap4.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\js\\select.bootstrap4.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\js\\select.bootstrap5.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\js\\select.bootstrap5.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\js\\select.bootstrap5.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\js\\select.bootstrap5.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\js\\select.bulma.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\js\\select.bulma.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\js\\select.bulma.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\js\\select.bulma.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\js\\select.dataTables.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\js\\select.dataTables.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\js\\select.dataTables.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\js\\select.dataTables.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\js\\select.foundation.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\js\\select.foundation.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\js\\select.foundation.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\js\\select.foundation.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\js\\select.jqueryui.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\js\\select.jqueryui.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\js\\select.jqueryui.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\js\\select.jqueryui.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\js\\select.semanticui.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\js\\select.semanticui.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\Select-1.6.2\\js\\select.semanticui.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\Select-1.6.2\\js\\select.semanticui.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\datatables.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\datatables.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\datatables.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\datatables.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\datatables.min.css",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\datatables.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\datatables.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\datatables.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\pdfmake-0.2.7\\pdfmake.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\pdfmake-0.2.7\\pdfmake.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\pdfmake-0.2.7\\pdfmake.min.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\pdfmake-0.2.7\\pdfmake.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\DataTables\\pdfmake-0.2.7\\vfs_fonts.js",
+      "PackagePath": "staticwebassets\\lib\\DataTables\\pdfmake-0.2.7\\vfs_fonts.js"
+    },
+    {
       "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap.rtl.min.css.map"
     },
     {
       "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
@@ -197,6 +1517,54 @@
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\bootstrap\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.min.js.map"
+    },
+    {
       "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
@@ -243,6 +1611,18 @@
     {
       "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\select2\\select2.full.min.js",
+      "PackagePath": "staticwebassets\\lib\\select2\\select2.full.min.js"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\select2\\select2.min.css",
+      "PackagePath": "staticwebassets\\lib\\select2\\select2.min.css"
+    },
+    {
+      "Id": "C:\\Users\\50361\\Documents\\amazon\\wwwroot\\lib\\select2\\select2.min.js",
+      "PackagePath": "staticwebassets\\lib\\select2\\select2.min.js"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.amazon.Microsoft.AspNetCore.StaticWebAssets.props",

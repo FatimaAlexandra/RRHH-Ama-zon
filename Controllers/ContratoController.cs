@@ -13,7 +13,7 @@ namespace amazon.Controllers
 
         public IActionResult Index()
         {
-            contratos = context.Contratos.Include(x => x.Empleado).ToList();
+            contratos = context.Contratos.Include(x => x.Empleados).ToList();
             ViewBag.Contratos = contratos; //guarda objetos y muestra en lista
             return View();
         }
