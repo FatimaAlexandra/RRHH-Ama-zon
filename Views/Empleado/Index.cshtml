@@ -18,20 +18,29 @@
               <table id="tabla_empleados" class="table table-responsive table-bordered table-striped table-primary table-hover" id="contractsTable">
                 <thead class="table-dark">
                     <tr>
-                        <th>Cedula</th>
+                        <th>Tipo documento</th>
+                        <th>Número de documento</th>
                         <th>Nombre</th>
                         <th>Correo</th>
                         <th>Nacimiento</th>
+                        <th>Telefono</th>
+                        <th>Direccion</th>
+                        <th>Cargo</th>
                     </tr>
                 </thead>
                 <tbody id="tableBody">
                     @foreach (Empleado empleado in ViewBag.Empleados)
                     {
                         <tr>
-                            <td>@empleado.Id</td>
+                            <td>@empleado.Documento.TipoDocumento</td>
+                            <td>@empleado.Documento.NumeroDocumento</td>
                             <td>@empleado.Nombre</td>
                             <td>@empleado.Correo</td>
                             <td>@empleado.FechaNacimiento</td>
+                            <td>@empleado.Telefono</td>
+                            <td>@empleado.Direccion</td>
+                            <td>@empleado.Contrato.Cargo</td>
+
                         </tr>
                     }
                 </tbody>
