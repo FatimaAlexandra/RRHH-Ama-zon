@@ -37,13 +37,11 @@ public partial class DbamazonContext : DbContext
     {
         modelBuilder.Entity<Acuerdo>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__acuerdos__3213E83F83BCF7B7");
+            entity.HasKey(e => e.Id).HasName("PK__acuerdos__3213E83F1C9CFA7C");
 
             entity.ToTable("acuerdos");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Contenido)
                 .IsUnicode(false)
                 .HasColumnName("contenido");
@@ -65,13 +63,11 @@ public partial class DbamazonContext : DbContext
 
         modelBuilder.Entity<Contrato>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__contrato__3213E83F91825AB2");
+            entity.HasKey(e => e.Id).HasName("PK__contrato__3213E83FADAC952B");
 
             entity.ToTable("contratos");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Acuerdoid).HasColumnName("acuerdoid");
             entity.Property(e => e.Cargo)
                 .HasMaxLength(255)
@@ -92,13 +88,11 @@ public partial class DbamazonContext : DbContext
 
         modelBuilder.Entity<Documento>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__document__3213E83F7B621D32");
+            entity.HasKey(e => e.Id).HasName("PK__document__3213E83F544CDEC2");
 
             entity.ToTable("documentos");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.NumeroDocumento)
                 .HasMaxLength(50)
                 .IsUnicode(false)
@@ -111,13 +105,11 @@ public partial class DbamazonContext : DbContext
 
         modelBuilder.Entity<Empleado>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__empleado__3213E83F80C12491");
+            entity.HasKey(e => e.Id).HasName("PK__empleado__3213E83F012F4251");
 
             entity.ToTable("empleados");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Contratoid).HasColumnName("contratoid");
             entity.Property(e => e.Correo)
                 .HasMaxLength(255)
@@ -159,13 +151,11 @@ public partial class DbamazonContext : DbContext
 
         modelBuilder.Entity<Paise>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__paises__3213E83FF4EC3DDA");
+            entity.HasKey(e => e.Id).HasName("PK__paises__3213E83FD9E0CD4C");
 
             entity.ToTable("paises");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Isocode)
                 .HasMaxLength(10)
                 .IsUnicode(false)
@@ -178,13 +168,11 @@ public partial class DbamazonContext : DbContext
 
         modelBuilder.Entity<Sede>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__sedes__3213E83F23C2B816");
+            entity.HasKey(e => e.Id).HasName("PK__sedes__3213E83F0F282A3A");
 
             entity.ToTable("sedes");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Codigosede)
                 .HasMaxLength(25)
                 .IsUnicode(false)
@@ -207,13 +195,11 @@ public partial class DbamazonContext : DbContext
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__usuarios__3213E83FBDB29ABD");
+            entity.HasKey(e => e.Id).HasName("PK__usuarios__3213E83F08B1A767");
 
             entity.ToTable("usuarios");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Clave)
                 .HasMaxLength(255)
                 .IsUnicode(false)
