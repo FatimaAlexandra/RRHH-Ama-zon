@@ -1,6 +1,6 @@
-﻿
+﻿@model Acuerdo
 <div class="text-center">
-    <h1 class="display-4">EMPLEADOS</h1>
+    <h1 class="display-4">Acuerdos</h1>
 </div>
 
 <main class="mt-2 container">
@@ -8,33 +8,35 @@
         <div class="row justify-content-between">
             <div class="col-6"></div>
             <div class="col-6 text-end">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Agregar empleado
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregarAcuerdoModal">
+                    Agregar acuerdo
                 </button>
             </div>
         </div>
         <div class="mt-3 row">
             <div class="col-12">
-                <table id="tabla_empleados" class="table table-responsive table-bordered table-striped table-primary table-hover" id="contractsTable">
+                <table id="tabla_acuerdos" class="table table-responsive table-bordered table-striped table-primary table-hover" id="contractsTable">
                     <thead class="table-dark">
                         <tr>
-                            <th>Cedula</th>
-                            <th>Nombre</th>
-                            <th>Correo</th>
-                            <th>Nacimiento</th>
+                            <th>Nombre acuerdo</th>
+                            <th>Tipo</th>
+                            <th>Pais</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">
-                        @foreach (Empleado empleado in ViewBag.Empleados)
+                        @foreach (Acuerdo acuerdo in acuerdos)
                         {
                             <tr>
-                                <td>@empleado.Id</td>
-                                <td>@empleado.Nombre</td>
-                                <td>@empleado.Correo</td>
-                                <td>@empleado.FechaNacimiento</td>
+                                <td>@acuerdo.Id</td>
+                                <td>@acuerdo.Nombre</td>
+                                <td>@acuerdo.Tipo</td>
+                                <td>@acuerdo.Pais.Nombre</td>
+                                <td></td>
                             </tr>
                         }
                     </tbody>
+                    <tfoot></tfoot>
                 </table>
             </div>
         </div>
@@ -42,11 +44,11 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="agregarAcuerdoModall" tabindex="-1" aria-labelledby="agregarAcuerdoModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Registrar empleado</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Registrar Acuerdo/h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -58,29 +60,172 @@
                                 <input type="text" class="form-control" id="Nombre" placeholder="Nombre">
                             </div>
                         </div>
-                        <div class="col-12 col-md-4">
+
+                        <div class="col-6 col-md-4">
                             <!-- Fecha de nacimiento -->
                             <div class="form-group">
-                                <label for="FechaNacimiento">Fecha de nacimiento</label>
-                                <input type="date" class="form-control" id="FechaNacimiento" placeholder="Fecha de nacimiento">
+                                <label for="tipo">Tipo de acuerdo</label>
+                                <select>
+                                    <option value="eventual">Eventual</option>
+                                    <option value="permanente">Permanente</option>
+                                </select>
                             </div>
                         </div>
+
+                        <div class="col-5 col-md-4">
+                            <!-- Fecha de nacimiento -->
+                            <div class="form-group">
+                                <label for="pais">País</label>
+                                <select id="pais" class="form-select" aria-label="Default select example">
+                                    @ {
+                                        int contador = 0;
+                                    }
+                                    @foreach (Paise pais in paises) {
+                                        @if (contador == 0) {
+                                            <option value="@pais.Id" selected>@pais.Nombre</option>
+                                        } else {
+                                            <option value="@pais.Id">@pais.Nombre</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+
                     </div>
                     <div class="row mt-3">
+                        <div class="col-12">
+                            <!-- Nombre -->
+                            <div class="form-group">
+                                <textarea id="editor" name="contenido"></textarea>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Editar Modal -->
+    <div class="modal fade" id="editarAcuerdoModall" tabindex="-1" aria-labelledby="agregarAcuerdoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Editar Acuerdo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
                         <div class="col-12 col-md-8">
                             <!-- Nombre -->
                             <div class="form-group">
-                                <label for="Correo">Correo</label>
-                                <input type="email" class="form-control" id="Correo" placeholder="Correo">
+                                <label for="editar_nombre">Nombre</label>
+                                <input type="text" class="form-control" id="editar_nombre" placeholder="Nombre">
                             </div>
                         </div>
-                        <div class="col-12 col-md-4">
+
+                        <div class="col-6 col-md-4">
                             <!-- Fecha de nacimiento -->
                             <div class="form-group">
-                                <label for="dui">Número de DUI</label>
-                                <input type="number" class="form-control" id="dui" placeholder="Número de DUI">
+                                <label for="editar_tipo">Tipo de acuerdo</label>
+                                <select id="editar_tipo">
+                                    <option value="eventual">Eventual</option>
+                                    <option value="permanente">Permanente</option>
+                                </select>
                             </div>
                         </div>
+
+                        <div class="col-5 col-md-4">
+                            <!-- Fecha de nacimiento -->
+                            <div class="form-group">
+                                <label for="editar_pais">País</label>
+                                <select id="editar_pais" class="form-select" aria-label="Default select example">
+                                    @ {
+                                        int contador = 0;
+                                    }
+                                    @foreach (Paise pais in paises) {
+                                        @if (contador == 0) {
+                                            <option value="@pais.Id" selected>@pais.Nombre</option>
+                                        } else {
+                                            <option value="@pais.Id">@pais.Nombre</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <!-- Nombre -->
+                            <div class="form-group">
+                                <textarea id="editar_editor" name="contenido"></textarea>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Editar Modal -->
+    <div class="modal fade" id="mostrarAcuerdoModall" tabindex="-1" aria-labelledby="agregarAcuerdoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Mostrar acuerdo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 col-md-8">
+                            <!-- Nombre -->
+                            <div class="form-group">
+                                <label for="mostrar_nombre">Nombre</label>
+                                <input type="text" class="form-control" id="mostrar_nombre" placeholder="Nombre" readonly>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-md-4">
+                            <!-- Fecha de nacimiento -->
+                            <div class="form-group">
+                                <label for="mostrar_tipo">Tipo de acuerdo</label>
+                                <select id="mostrar_tipo" readonly>
+                                    <option value="eventual">Eventual</option>
+                                    <option value="permanente">Permanente</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-5 col-md-4">
+                            <!-- Fecha de nacimiento -->
+                            <div class="form-group">
+                                <label for="pais">País</label>
+                                <input type="text" class="form-control" id="mostrar_pais" placeholder="País" readonly>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <!-- Nombre -->
+                            <div class="form-group">
+                                <textarea id="mostrar_editor" name="contenido" readonly></textarea>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -94,26 +239,10 @@
 
 </main>
 
-<script>
-    document.getElementById("searchButton").addEventListener("click", function () {
-        var input = document.getElementById("searchInput").value.toLowerCase();
-        var rows = document.getElementById("tableBody").getElementsByTagName("tr");
-
-        for (var i = 0; i < rows.length; i++) {
-            var rowData = rows[i].textContent.toLowerCase();
-
-            if (rowData.indexOf(input) > -1) {
-                rows[i].style.display = "";
-            } else {
-                rows[i].style.display = "none";
-            }
-        }
-    });
-</script>
-
 @section Scripts {
+
     <script>
-        $("#tabla_empleados").DataTable({
+        $("#tabla_acuerdos").DataTable({
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
             },
@@ -122,8 +251,80 @@
             initComplete: function () {
 
                 // Clonet thead on tfoot datatable
-                $("#tabla_empleados thead tr").clone().appendTo($("#tabla_empleados tfoot"));
+                $("#tabla_acuerdos thead tr").clone().appendTo($("#tabla_acuerdos tfoot"));
             },
+            columns: [
+                { name: "ID", visible: false},
+                { name: "Nombre" },
+                { name: "Tipo" },
+                { name: "Pais" },
+                {
+                    data: null,
+                    render: function (data, type, row) {
+                        return `
+                            <button class="btn btn-info" onclick='verAcuerdo(${row.ID})'>
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="btn btn-warning" onclick='editarAcuerdo(${row.ID})'>
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-danger" onclick='borrarAcuerdo(${row.ID})'>
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        `;
+                    }
+                }
+            ]
         });
+    </script>
+
+    <script src="~/lib/ckeditor/ckeditor.js"></script>
+    <script>
+
+        const editor = ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+
+        const editar_editor = ClassicEditor
+        .create( document.querySelector( '#editar_editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+
+        const mostrar_editor = ClassicEditor
+        .create( document.querySelector( '#mostrar_editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+
+
+        function borrarAcuerdo (idAcuerdo) {
+            alert("borrar acuerdo " + idAcuerdo);
+            // Logica para borrar acuerdo
+
+        }
+
+        function editarAcuerdo(idAcuerdo) {
+            alert("editar acuerdo " + idAcuerdo);
+            // Logica para editar acuerdo
+
+            const editar_modal = document.getElementById("editarAcuerdoModal");
+            const editarModal = new bootstrap.Modal(editar_modal);
+            editarModal.show();
+        }
+
+        function verAcuerdo (idAcuero) {
+            alert("ver acuerdo " + idAcuero);
+            // Logica para ver acuerdo
+
+
+            const mostrar_modal = document.getElementById("mostrarAcuerdoModall");
+            const mostrarModal = new bootstrap.Modal(mostrar_modal);
+            mostrarModal.show();
+        }
+
+
     </script>
 }
