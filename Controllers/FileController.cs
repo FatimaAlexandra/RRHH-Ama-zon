@@ -26,7 +26,7 @@ namespace amazon.Controllers
                         Documento documento = new Documento();
 
 
-                        Pais pais = _context.Paises.FirstOrDefault(p => p.Isocode == valores[11]); // 11 => isocode 
+                        Paise pais = _context.Paises.FirstOrDefault(p => p.Isocode == valores[11]); // 11 => isocode 
                         Acuerdo acuerdo = _context.Acuerdos.FirstOrDefault(a => a.Paisid == pais.Id);
 
                        
@@ -57,7 +57,7 @@ namespace amazon.Controllers
                         empleado.Telefono = valores[3]; // 3 => telefono
                         empleado.Direccion = valores[4]; // 4 => direccion
                         
-                        Sede sede = _context.Sedes.FirstOrDefault(s => s.CodigoSede == valores[5]); // 5 => codigo sede
+                        Sede sede = _context.Sedes.FirstOrDefault(s => s.Codigosede == valores[5]); // 5 => codigo sede
                         
                         empleado.Sedeid = sede.Id;
                         empleado.Contratoid = contrato.Id;

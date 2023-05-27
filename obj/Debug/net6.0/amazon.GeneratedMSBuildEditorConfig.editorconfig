@@ -16,6 +16,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\50361\Documents\amazon
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/50361/Documents/amazon/Views/Acuerdo/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN1ZXJkb1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/50361/Documents/amazon/Views/Acuerdo/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN1ZXJkb1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/50361/Documents/amazon/Views/Acuerdo/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN1ZXJkb1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/50361/Documents/amazon/Views/Acuerdo/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN1ZXJkb1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/50361/Documents/amazon/Views/Acuerdo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN1ZXJkb1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/50361/Documents/amazon/Views/Contrato/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udHJhdG9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
