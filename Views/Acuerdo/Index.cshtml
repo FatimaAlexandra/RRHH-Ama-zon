@@ -18,22 +18,14 @@
                 <table id="tabla_empleados" class="table table-responsive table-bordered table-striped table-primary table-hover" id="contractsTable">
                     <thead class="table-dark">
                         <tr>
-                            <th>Cedula</th>
+                            <th> </th>
                             <th>Nombre</th>
                             <th>Correo</th>
                             <th>Nacimiento</th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">
-                        @foreach (Empleado empleado in ViewBag.Empleados)
-                        {
-                            <tr>
-                                <td>@empleado.Id</td>
-                                <td>@empleado.Nombre</td>
-                                <td>@empleado.Correo</td>
-                                <td>@empleado.FechaNacimiento</td>
-                            </tr>
-                        }
+                        
                     </tbody>
                 </table>
             </div>
