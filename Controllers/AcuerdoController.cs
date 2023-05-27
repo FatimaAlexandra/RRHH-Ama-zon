@@ -7,11 +7,7 @@ namespace amazon.Controllers
     public class AcuerdoController : Controller
     {
         //instanciamos conección a bd
-        private readonly DbamazonContext context;
-        public AcuerdoController(DbamazonContext _context)
-        {
-            context = _context;
-        }
+        DbamazonContext context = new DbamazonContext();
 
         [HttpPost]
         public IActionResult CrearAcuerdo(string nombre, string contenido, string tipo, int paisId)
@@ -34,9 +30,11 @@ namespace amazon.Controllers
         public IActionResult Index()
         {
             List<Acuerdo> acuerdos = context.Acuerdos.Include(p => p.Pais).ToList();
-
             List<Paise> paises = context.Paises.ToList();
-            return View(acuerdos);
+            ViewBag.Acuerdos = acuerdos;
+            ViewBag.Paises = paises;
+
+            return View();
 
         }
     }

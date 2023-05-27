@@ -26,7 +26,7 @@
                         </tr>
                     </thead>
                     <tbody id="tableBody">
-                        @foreach (Acuerdo acuerdo in acuerdos)
+                        @foreach (Acuerdo acuerdo in ViewBag.Acuerdos)
                         {
                             <tr>
                                 <td>@acuerdo.Id</td>
@@ -79,16 +79,16 @@
                             <div class="form-group">
                                 <label for="pais">País</label>
                                 <select id="pais" class="form-select" aria-label="Default select example">
-                                    @ {
+                                    @{
                                         int contador = 0;
                                     }
-                                    @foreach (Paise pais in paises) {
+                                    @foreach (Paise pais in ViewBag.Paises) {
                                         @if (contador == 0) {
                                             <option value="@pais.Id" selected>@pais.Nombre</option>
                                         } else {
                                             <option value="@pais.Id">@pais.Nombre</option>
                                         }
-                                        @contador++;
+                                        contador++;
                                     }
                                 </select>
                             </div>
@@ -148,15 +148,16 @@
                             <div class="form-group">
                                 <label for="editar_pais">País</label>
                                 <select id="editar_pais" class="form-select" aria-label="Default select example">
-                                    @ {
-                                        int contador = 0;
+                                    @{
+                                        int contador2 = 0;
                                     }
-                                    @foreach (Paise pais in paises) {
-                                        @if (contador == 0) {
+                                    @foreach (Paise pais in ViewBag.Paises) {
+                                        @if (contador2 == 0) {
                                             <option value="@pais.Id" selected>@pais.Nombre</option>
                                         } else {
                                             <option value="@pais.Id">@pais.Nombre</option>
                                         }
+                                        contador2++;
                                     }
                                 </select>
                             </div>
