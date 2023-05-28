@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace amazon.Controllers
 {
+    [Route("[controller]")]
     public class AcuerdoController : Controller
     {
         //instanciamos conección a bd
@@ -36,6 +37,23 @@ namespace amazon.Controllers
 
             return View();
 
+        }
+
+        [HttpGet("{id}")]
+        [Route("Obtener/{id}")]
+        public ActionResult Obetener(int id)
+        {
+            Acuerdo acuerdo = context.Acuerdos.Find(id);
+            Paise pais = context.Paises.Find(acuerdo.Paisid);
+            acuerdo.Pais = pais;
+            return Json(acuerdo);
+            // var myObject = context.Acuerdos.Find(id);
+            // // if (myObject == null)
+            // // {
+            // //     return NotFound();
+            // // }
+
+            // return Json(myObject);
         }
     }
 }
