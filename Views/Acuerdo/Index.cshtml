@@ -42,7 +42,7 @@
                 <table id="tabla_acuerdos" class="table table-responsive table-bordered table-striped table-primary table-hover" id="contractsTable">
                     <thead class="table-dark">
                         <tr>
-                            <th>Id</th>
+                            <th>ID</th>
                             <th>Nombre acuerdo</th>
                             <th>Tipo</th>
                             <th>Pais</th>
@@ -131,8 +131,12 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cerrar <i class="fas fa-times"></i>
+                    </button>
+                    <button type="button" class="btn btn-primary" onclick="guardarAcuerdo()">
+                        Guardar <i class="fas fa-save"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -200,8 +204,13 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <input type="hidden" id="editar_id" />
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cerrar <i class="fas fa-times"></i>
+                    </button>
+                    <button type="button" class="btn btn-primary" onclick="guardarEditarAcuerdo()">
+                        Guardar <i class="fas fa-save"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -229,7 +238,7 @@
                             <!-- Fecha de nacimiento -->
                             <div class="form-group">
                                 <label for="mostrar_tipo">Tipo de acuerdo</label>
-                                <select id="mostrar_tipo" class="form-control" readonly>
+                                <select id="mostrar_tipo" class="form-control" disabled>
                                     <option value="eventual">Eventual</option>
                                     <option value="permanente">Permanente</option>
                                 </select>
@@ -239,8 +248,20 @@
                         <div class="col-5 col-md-4">
                             <!-- Fecha de nacimiento -->
                             <div class="form-group">
-                                <label for="pais">País</label>
-                                <input type="text" class="form-control" id="mostrar_pais" placeholder="País" readonly>
+                                <label for="mostrar_pais">País</label>
+                                <select id="mostrar_pais" class="form-select form-control" disabled aria-label="Default select example">
+                                    @{
+                                        int contador3 = 0;
+                                    }
+                                    @foreach (Paise pais in ViewBag.Paises) {
+                                        @if (contador3 == 0) {
+                                            <option value="@pais.Id" selected>@pais.Nombre</option>
+                                        } else {
+                                            <option value="@pais.Id">@pais.Nombre</option>
+                                        }
+                                        contador3++;
+                                    }
+                                </select>
                             </div>
                         </div>
 
@@ -250,7 +271,7 @@
                         <div class="col-12">
                             <!-- Nombre -->
                             <div class="form-group">
-                                <textarea id="mostrar_editor" name="contenido" readonly></textarea>
+                                <textarea id="mostrar_editor" name="contenido" disabled></textarea>
                             </div>
                         </div>
                         
@@ -284,19 +305,28 @@
             columns: [
                 { name: "ID", visible: false},
                 { name: "Nombre" },
-                { name: "Tipo" },
+                { 
+                    name: "Tipo", 
+                    render: function (data, type, row) {
+                        if (row[2] == "eventual") {
+                            return "Eventual";
+                        } else {
+                            return "Permanente";
+                        }
+                    } 
+                },
                 { name: "Pais" },
                 {
                     data: null,
                     render: function (data, type, row) {
                         return `
-                            <button class="btn btn-info" onclick='verAcuerdo(${row.ID})'>
+                            <button class="btn btn-info" onclick='verAcuerdo(${row[0]})'>
                                 <i class="fas fa-eye"></i>
                             </button>
-                            <button class="btn btn-warning" onclick='editarAcuerdo(${row.ID})'>
+                            <button class="btn btn-warning" onclick='editarAcuerdo(${row[0]})'>
                                 <i class="fas fa-edit"></i>
                             </button>
-                            <button class="btn btn-danger" onclick='borrarAcuerdo(${row.ID})'>
+                            <button class="btn btn-danger" onclick='borrarAcuerdo(${row[0]})'>
                                 <i class="fas fa-trash"></i>
                             </button>
                         `;
@@ -309,6 +339,35 @@
     <script src="~/lib/ckeditor/ckeditor.js"></script>
 
     <script>
+        @* CKediitor config *@
+        let editor, editar_editor, mostrar_editor;
+        document.addEventListener("DOMContentLoaded", function () {
+            const config = {
+                toolbarGroups: [
+                    { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
+                    { name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] },
+                    { name: 'links', groups: [ 'links' ] },
+                    { name: 'insert', groups: [ 'insert' ] },
+                    { name: 'forms', groups: [ 'forms' ] },
+                    { name: 'tools', groups: [ 'tools' ] },
+                    { name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
+                    { name: 'others', groups: [ 'others' ] },
+                    '/',
+                    { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+                    { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
+                    { name: 'styles', groups: [ 'styles' ] },
+                    { name: 'colors', groups: [ 'colors' ] },
+                    { name: 'about', groups: [ 'about' ] }
+                ],
+
+                removeButtons: 'Underline,Subscript,Superscript',
+                height: '600px',
+            }
+
+            editor = CKEDITOR.replace("editor", config);   
+            editar_editor = CKEDITOR.replace("editar_editor", config);
+            mostrar_editor = CKEDITOR.replace("mostrar_editor", config);
+       })
 
         // Select2
         $("#pais, #tipo, #editar_tipo, #editar_pais, #mostrar_tipo, #mostrar_pais").select2({
@@ -321,47 +380,88 @@
             dropdownParent: $('#editarAcuerdoModal')
         });
 
+        $("#mostrar_tipo, #mostrar_pais").select2({
+            width: "100%",
+            dropdownParent: $('#mostrarAcuerdoModal')
+        });
+
         $("#filtro_pais").select2({});
         $("#filtro_contrato").select2({});
 
-
-        const editor = ClassicEditor
-        .create( document.querySelector( '#editor' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-
-        const editar_editor = ClassicEditor
-        .create( document.querySelector( '#editar_editor' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-
-        const mostrar_editor = ClassicEditor
-        .create( document.querySelector( '#mostrar_editor' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-
-
         function borrarAcuerdo (idAcuerdo) {
-            alert("borrar acuerdo " + idAcuerdo);
-            // Logica para borrar acuerdo
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "¡No podrás revertir esto!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Sí, borrar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: `/Acuerdo/eliminar/${idAcuerdo}`,
+                        type: "DELETE",
+                        success: function (response) {
+                            console.log(response);
+                            Swal.fire(
+                                '¡Borrado!',
+                                'El acuerdo ha sido borrado.',
+                                'success'
+                            )
+                            setTimeout(() => {
+                                window.location.reload();
+                            }, 1000);
+                        },
+                        error: function (error) {
+                            console.log(error);
+                        }
+                    });
+                }
+            })
 
         }
 
         function editarAcuerdo(idAcuerdo) {
-            alert("editar acuerdo " + idAcuerdo);
-            // Logica para editar acuerdo
+            
+            $.ajax({
+                url: `/Acuerdo/obtener/${idAcuerdo}`,
+                type: "GET",
+                success: function (response) {
+                    console.log(response);
+                    $("#editar_nombre").val(response.nombre);
+                    $("#editar_tipo").val(response.tipo).trigger("change");
+                    $("#editar_pais").val(response.paisid).trigger("change");
+                    $("#editar_id").val(response.id);
+                    editar_editor.setData(response.contenido);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
 
             const editar_modal = document.getElementById("editarAcuerdoModal");
             const editarModal = new bootstrap.Modal(editar_modal);
             editarModal.show();
         }
 
-        function verAcuerdo (idAcuero) {
-            alert("ver acuerdo " + idAcuero);
-            // Logica para ver acuerdo
+        function verAcuerdo (idAcuerdo) {
+
+            $.ajax({
+                url: `/Acuerdo/obtener/${idAcuerdo}`,
+                type: "GET",
+                success: function (response) {
+                    console.log(response);
+                    $("#mostrar_nombre").val(response.nombre);
+                    $("#mostrar_tipo").val(response.tipo).trigger("change");
+                    $("#mostrar_pais").val(response.paisid).trigger("change");
+                    mostrar_editor.setData(response.contenido);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            })
 
 
             const mostrar_modal = document.getElementById("mostrarAcuerdoModal");
@@ -387,5 +487,99 @@
                 tabla_acuerdos.column(2).search(this.value).draw();
             }
         });
+
+        @* Funciones CRUDS *@
+        function guardarAcuerdo () {
+            const data = {
+                Nombre: $("#Nombre").val(),
+                Tipo: $("#tipo").val(),
+                PaisId: $("#pais").val(),
+                Contenido: editor.getData()
+            }
+            console.log(data)
+            if (data.nombre == "" || data.tipo == "" || data.paisid == "" || data.contenido == "") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Todos los campos son obligatorios',
+                })
+                return;
+            }
+
+            $.ajax({
+                url: "/Acuerdo",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(data),
+                success: function (response) {
+                    console.log(response);
+                    Swal.fire(
+                        'Guardado!',
+                        'El acuerdo se ha guardado correctamente',
+                        'success'
+                    )
+                    $("#agregarAcuerdoModal").modal("hide");
+                    $("#Nombre").val("");
+                    $("#tipo").val("").trigger("change");
+                    $("#pais").val("").trigger("change");
+                    editor.setData("");
+                    setTimeout(() => {
+                        location.reload();
+                    }, 1000);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            })
+        }
+
+        function guardarEditarAcuerdo() {
+            const data = {
+                Nombre: $("#editar_nombre").val(),
+                Tipo: $("#editar_tipo").val(),
+                PaisId: $("#editar_pais").val(),
+                Contenido: editar_editor.getData()
+            }
+            const idAcuerdo = $("#editar_id").val();
+            console.log(data)
+            if (data.Nombre == null || data.Tipo == null || data.PaisId == null || data.Contenido == null) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Todos los campos son obligatorios',
+                })
+                return;
+            }
+            if (data.nombre == "" || data.tipo == "" || data.paisid == "" || data.contenido == "") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Todos los campos son obligatorios',
+                })
+                return;
+            }
+
+            $.ajax({
+                url: `/Acuerdo/Editar/${idAcuerdo}`,
+                type: "PUT",
+                contentType: "application/json",
+                data: JSON.stringify(data),
+                success: function (response) {
+                    console.log(response);
+                    Swal.fire(
+                        'Guardado!',
+                        'El acuerdo se ha guardado correctamente',
+                        'success'
+                    )
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 1000);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            })
+            
+        }
     </script>
 }
