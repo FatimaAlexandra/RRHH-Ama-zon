@@ -37,7 +37,7 @@ public partial class DbamazonContext : DbContext
     {
         modelBuilder.Entity<Acuerdo>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__acuerdos__3213E83F1C9CFA7C");
+            entity.HasKey(e => e.Id).HasName("PK__acuerdos__3213E83FA7BE4452");
 
             entity.ToTable("acuerdos");
 
@@ -58,12 +58,12 @@ public partial class DbamazonContext : DbContext
             entity.HasOne(d => d.Pais).WithMany(p => p.Acuerdos)
                 .HasForeignKey(d => d.Paisid)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__acuerdos__paisid__3B75D760");
+                .HasConstraintName("FK__acuerdos__paisid__29572725");
         });
 
         modelBuilder.Entity<Contrato>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__contrato__3213E83FADAC952B");
+            entity.HasKey(e => e.Id).HasName("PK__contrato__3213E83FC451393F");
 
             entity.ToTable("contratos");
 
@@ -83,12 +83,12 @@ public partial class DbamazonContext : DbContext
             entity.HasOne(d => d.Acuerdo).WithMany(p => p.Contratos)
                 .HasForeignKey(d => d.Acuerdoid)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__contratos__acuer__3E52440B");
+                .HasConstraintName("FK__contratos__acuer__2C3393D0");
         });
 
         modelBuilder.Entity<Documento>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__document__3213E83F544CDEC2");
+            entity.HasKey(e => e.Id).HasName("PK__document__3213E83F31FB1BA4");
 
             entity.ToTable("documentos");
 
@@ -105,7 +105,7 @@ public partial class DbamazonContext : DbContext
 
         modelBuilder.Entity<Empleado>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__empleado__3213E83F012F4251");
+            entity.HasKey(e => e.Id).HasName("PK__empleado__3213E83FB3216C17");
 
             entity.ToTable("empleados");
 
@@ -136,22 +136,22 @@ public partial class DbamazonContext : DbContext
             entity.HasOne(d => d.Contrato).WithMany(p => p.Empleados)
                 .HasForeignKey(d => d.Contratoid)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__empleados__contr__45F365D3");
+                .HasConstraintName("FK__empleados__contr__33D4B598");
 
             entity.HasOne(d => d.Documento).WithMany(p => p.Empleados)
                 .HasForeignKey(d => d.Documentoid)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__empleados__docum__46E78A0C");
+                .HasConstraintName("FK__empleados__docum__34C8D9D1");
 
             entity.HasOne(d => d.Sede).WithMany(p => p.Empleados)
                 .HasForeignKey(d => d.Sedeid)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__empleados__sedei__44FF419A");
+                .HasConstraintName("FK__empleados__sedei__32E0915F");
         });
 
         modelBuilder.Entity<Paise>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__paises__3213E83FD9E0CD4C");
+            entity.HasKey(e => e.Id).HasName("PK__paises__3213E83FCBBBD71C");
 
             entity.ToTable("paises");
 
@@ -168,7 +168,7 @@ public partial class DbamazonContext : DbContext
 
         modelBuilder.Entity<Sede>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__sedes__3213E83F0F282A3A");
+            entity.HasKey(e => e.Id).HasName("PK__sedes__3213E83F80856750");
 
             entity.ToTable("sedes");
 
@@ -190,12 +190,12 @@ public partial class DbamazonContext : DbContext
             entity.HasOne(d => d.Pais).WithMany(p => p.Sedes)
                 .HasForeignKey(d => d.Paisid)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__sedes__paisid__38996AB5");
+                .HasConstraintName("FK__sedes__paisid__267ABA7A");
         });
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__usuarios__3213E83F08B1A767");
+            entity.HasKey(e => e.Id).HasName("PK__usuarios__3213E83FCF404963");
 
             entity.ToTable("usuarios");
 
