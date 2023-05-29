@@ -1,0 +1,157 @@
+@model Paise
+<div class="text-center">
+    <h1 class="display-4">Acuerdos</h1>
+</div>
+
+<main class="mt-2 container">
+    <div>
+        <div class="row justify-content-between">
+            <div class="col-6"></div>
+            <div class="col-6 text-end">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregarModal">
+                    Agregar Pais
+                </button>
+            </div>
+        </div>
+        <div class="mt-3 row">
+            <div class="col-6 col-md-3">
+                <div class="form-group">
+                    <label for="filtro_pais">Filto país</label>
+                    <select id="filtro_pais" class="form-select form-control" aria-label="Default select example">
+                        <option value="0">Todos</option>
+                        @foreach (Paise pais in ViewBag.Paises)
+                        {
+                            <option value="@pais.Nombre">@pais.Nombre</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="form-group">
+                    <label for="filtro_contrato">Filto contrato</label>
+                    <select id="filtro_contrato" class="form-select form-control" aria-label="Default select example">
+                        <option value="0">Todos</option>
+                        <option value="eventual">Eventual</option>
+                        <option value="permanente">Permanente</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="mt-3 row">
+            <div class="col-12">
+                <table id="tabla_acuerdos" class="table table-responsive table-bordered table-striped table-primary table-hover" id="contractsTable">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>IsoAlpha2</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        @foreach (Paise pais in ViewBag.Paises)
+                        {
+                            <tr>
+                                <td>@pais.Id</td>
+                                <td>@pais.Nombre</td>
+                                <td>@pais.Isocode</td>
+                                <td></td>
+                            </tr>
+                        }
+
+                    </tbody>
+                    <tfoot></tfoot>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="agregarModal" aria-labelledby="agregarModalLabel" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Registrar Acuerdo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                       <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" />
+                       </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div>
+                            <label for="isocode">IsoAlpha2</label>
+                            <input type="text" class="form-control" id="isocode" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cerrar <i class="fas fa-times"></i>
+                    </button>
+                    <button type="button" class="btn btn-primary" onclick="guardarAcuerdo()">
+                        Guardar <i class="fas fa-save"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+</main>
+
+@section Scripts {
+
+    <script>
+        const tabla_acuerdos = $("#tabla_acuerdos").DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
+            },
+            "responsive": true,
+            "dom": 'Bfrtip',
+            initComplete: function () {
+
+                // Clonet thead on tfoot datatable
+                $("#tabla_acuerdos thead tr").clone().appendTo($("#tabla_acuerdos tfoot"));
+            },
+            columns: [
+                { title: "ID", visible: false},
+                { title: "Nombre" },
+                { 
+                    title: "IsoAlpha2", 
+                    render: function (data, type, row) {
+                        if (row[2] == "eventual") {
+                            return "Eventual";
+                        } else {
+                            return "Permanente";
+                        }
+                    } 
+                },
+                {
+                    title: null,
+                    render: function (data, type, row) {
+                        return `
+                            <button class="btn btn-info" onclick='verAcuerdo(${row[0]})'>
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="btn btn-warning" onclick='editarAcuerdo(${row[0]})'>
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-danger" onclick='borrarAcuerdo(${row[0]})'>
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        `;
+                    }
+                }
+            ]
+        });
+    </script>
+
+    <script>
+        
+    </script>
+}
