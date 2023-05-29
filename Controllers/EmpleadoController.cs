@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using amazon.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace amazon.Controllers
 {
+    [Authorize]
     public class EmpleadoController : Controller
     {
         //instanciamos conección a bd

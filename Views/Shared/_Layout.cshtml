@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="~/lib/DataTables/datatables.min.css" />
     @* Select2 *@
     <link rel="stylesheet" href="~/lib/select2/select2.min.css" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <!-- Font awesome -->
     <link rel="stylesheet" href="~/lib/fontawesome/css/all.min.css" />
@@ -30,9 +31,10 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                    </li>
+
+                    @if (User.Identity.IsAuthenticated)
+                        {
+                    
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="File" asp-action="Create">Cargar datos</a>
                     </li>
@@ -45,6 +47,15 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="Acuerdo" asp-action="Index">Acuerdos</a>
                     </li>
+                        <li class="nav-item text-end">
+                          <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="Logout">Logout</a>
+                     </li>
+                    } else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="Login">Login</a>
+                        </li>
+                        }
                 </ul>
             </div>
         </div>

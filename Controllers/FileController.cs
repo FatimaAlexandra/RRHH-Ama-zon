@@ -1,10 +1,12 @@
 ﻿using amazon.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.IO;
 using System.Web;
 
 namespace amazon.Controllers
 {
+    [Authorize]
     public class FileController : Controller
     {
         DbamazonContext _context = new DbamazonContext();
