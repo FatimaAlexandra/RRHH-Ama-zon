@@ -1,6 +1,6 @@
 @model Paise
 <div class="text-center">
-    <h1 class="display-4">Acuerdos</h1>
+    <h1 class="display-4">Gestión de paises</h1>
 </div>
 
 <main class="mt-2 container">
@@ -72,14 +72,14 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Registrar Acuerdo</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Registrar Pais</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                        <div class="form-group">
                             <label for="nombre">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" />
+                            <input type="text" class="form-control" id="Nombre" />
                        </div>
                     </div>
                     <div class="row mt-3">
@@ -93,7 +93,7 @@
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                         Cerrar <i class="fas fa-times"></i>
                     </button>
-                    <button type="button" class="btn btn-primary" onclick="guardarAcuerdo()">
+                    <button type="button" class="btn btn-primary" onclick="guardarPais()">
                         Guardar <i class="fas fa-save"></i>
                     </button>
                 </div>
@@ -141,7 +141,7 @@
                             <button class="btn btn-warning" onclick='editarAcuerdo(${row[0]})'>
                                 <i class="fas fa-edit"></i>
                             </button>
-                            <button class="btn btn-danger" onclick='borrarAcuerdo(${row[0]})'>
+                            <button class="btn btn-danger" onclick='borrarPais(${row[0]})'>
                                 <i class="fas fa-trash"></i>
                             </button>
                         `;
@@ -151,7 +151,86 @@
         });
     </script>
 
+    <script src="~/lib/ckeditor/ckeditor.js"></script>
+
     <script>
+
+                function borrarPais (idPais) {
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "¡No podrás revertir esto!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Sí, borrar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: `/Pais/eliminar/${idPais}`,
+                        type: "DELETE",
+                        success: function (response) {
+                            console.log(response);
+                            Swal.fire(
+                                '¡Borrado!',
+                                'El pais ha sido borrado.',
+                                'success'
+                            )
+                            setTimeout(() => {
+                                window.location.reload();
+                            }, 1000);
+                        },
+                        error: function (error) {
+                            console.log(error);
+                        }
+                    });
+                }
+            })
+
+        }
+        //-----------------------------------------------------------------
+        @* Funciones CRUDS *@
+            function guardarPais() {
+                const data = {
+                    Nombre: $("#Nombre").val(),
+                    Isocode: $("#isocode").val(),
+                }
+                console.log(data)
+                if (data.nombre == "" || data.isocode == "") {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Todos los campos son obligatorios',
+                    })
+                    return;
+                }
+
+                $.ajax({
+                    url: "/Pais",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(data),
+                    success: function (response) {
+                        console.log(response);
+                        Swal.fire(
+                            'Guardado!',
+                            'El acuerdo se ha guardado correctamente',
+                            'success'
+                        )
+                        $("#agregarPaisModal").modal("hide");
+                        $("#Nombre").val("");
+                        $("#isocode").val("").trigger("change");
+                        setTimeout(() => {
+                            location.reload();
+                        }, 1000);
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                })
+            }
+
         
     </script>
 }
