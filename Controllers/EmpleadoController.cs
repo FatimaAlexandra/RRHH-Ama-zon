@@ -9,6 +9,7 @@ namespace amazon.Controllers
 {
     [Route("[controller]")]
     // [Authorize]
+
     public class EmpleadoController : Controller
     {
         //instanciamos conección a bd

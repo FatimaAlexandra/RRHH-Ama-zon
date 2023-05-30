@@ -1,4 +1,4 @@
-﻿@model Acuerdo
+﻿  @model Acuerdo
 <div class="text-center">
     <h1 class="display-4">Acuerdos</h1>
 </div>
@@ -306,7 +306,7 @@
                 { name: "ID", visible: false},
                 { name: "Nombre" },
                 { 
-                    name: "Tipo", 
+                    name: "Isocode", 
                     render: function (data, type, row) {
                         if (row[2] == "eventual") {
                             return "Eventual";

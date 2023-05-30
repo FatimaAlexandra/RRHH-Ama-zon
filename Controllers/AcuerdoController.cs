@@ -1,12 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using amazon.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 using amazon.Models.Inputs;
 
 namespace amazon.Controllers
 {
 
     [Route("[controller]")]
+    [Authorize]
     public class AcuerdoController : Controller
     {
         //instanciamos conección a bd
