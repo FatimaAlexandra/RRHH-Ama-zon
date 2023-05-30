@@ -25,8 +25,8 @@ namespace amazon.Controllers
         [Route("Obtener/{id}")]
         public ActionResult Obetener(int id)
         {
-            Acuerdo acuerdo = context.Acuerdos.Find(id);
-            return Json(acuerdo);
+            Paise pais = context.Paises.Find(id);
+            return Json(pais);
         }
 
 
@@ -71,7 +71,7 @@ namespace amazon.Controllers
         [Route("Editar/{id}")]
         public IActionResult EditarPais(int id, [FromBody] EditarPaisInputModel input)
         {
-            // Buscar el acuerdo a editar por su id
+            // Buscar el pais a editar por su id
             Paise pais = context.Paises.Find(id);
             if (pais == null)
             {
