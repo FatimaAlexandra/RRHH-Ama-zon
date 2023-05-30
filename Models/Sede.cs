@@ -5,7 +5,7 @@ namespace amazon.Models;
 
 public partial class Sede
 {
-    public int Id { get; set; }
+    public int Id { get; set; } = 0;
 
     public string Logo { get; set; } = null!;
 

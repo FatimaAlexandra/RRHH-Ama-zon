@@ -511,6 +511,9 @@
                 type: "POST",
                 contentType: "application/json",
                 data: JSON.stringify(data),
+                xhrFields: {
+                    withCredentials: true
+                },
                 success: function (response) {
                     console.log(response);
                     Swal.fire(
