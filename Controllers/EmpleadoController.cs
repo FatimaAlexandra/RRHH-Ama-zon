@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Authorization;
 using amazon.Models.Inputs;
 using amazon.Models.Outputs;
 
+using amazon.Services;
+
 namespace amazon.Controllers
 {
     [Route("[controller]")]
@@ -224,6 +226,48 @@ namespace amazon.Controllers
             context.SaveChanges();
 
             return Json(empleadoEditado); // Devolver el acuerdo como respuesta JSON
+        }
+
+
+        [HttpPut("{id}")]
+        [Route("Despedir/{id}")]
+        public IActionResult DespedirEmpleado(int id)
+        {
+            Empleado empleado = context.Empleados
+                .Include(x => x.Contrato)
+                .FirstOrDefault(x => x.Id == id);
+            if (empleado == null)
+            {
+                // Manejar el caso cuando no se encuentra el empleado
+                return NotFound();
+            }
+
+            Contrato contrato = context.Contratos.Find(empleado.Contratoid);
+            if (contrato == null)
+            {
+                // Manejar el caso cuando no se encuentra el contrato
+                return NotFound();
+            }
+            contrato.FechaFin = DateTime.Now;
+
+
+            // save contrato
+            Contrato contratoEditado = context.Contratos.Update(contrato).Entity;
+            context.SaveChanges();
+
+            return Json(empleado); // Devolver el acuerdo como respuesta JSON
+        }
+
+        [HttpPut("{id}")]
+        [Route("EnviarEmail/{id}")]
+        public IActionResult EnviarContrato(int id)
+        {
+            SendEmail EnviarEmail = new SendEmail();
+            var message = EnviarEmail.GenerarPdf(id);
+            EnviarEmail.EnviarEmail(message);
+
+            // return statusode 200
+            return Ok();
         }
 
     }
