@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Text.Json.Serialization;
 namespace amazon.Models;
 
 public partial class Empleado
@@ -22,10 +22,10 @@ public partial class Empleado
     public int Contratoid { get; set; }
 
     public int Documentoid { get; set; }
-
+    [JsonIgnore]
     public virtual Contrato Contrato { get; set; } = null!;
-
+    [JsonIgnore]
     public virtual Documento Documento { get; set; } = null!;
-
+    [JsonIgnore]
     public virtual Sede Sede { get; set; } = null!;
 }
