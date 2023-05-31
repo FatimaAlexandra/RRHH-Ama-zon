@@ -11,8 +11,11 @@
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Agregar empleado
                 </button>
-                
-            </div>
+               
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Generar acuerdo
+                </button>
+            </div>            
         </div>
         <div class="mt-3 row">
             <div class="col-6 col-md-3">
@@ -27,17 +30,7 @@
                     </select>
                 </div>
             </div>
-            @* <div class="col-6 col-md-3">
-                <div class="form-group">
-                    <label for="filtro_contrato">Filto contrato</label>
-                    <select id="filtro_contrato" class="form-select form-control" aria-label="Default select example">
-                        <option value="0">Todos</option>
-                        <option value="eventual">Eventual</option>
-                        <option value="permanente">Permanente</option>
-                    </select>
-                </div>
-            </div> *@
-        </div>
+            </div>
         <div class="mt-3 row">
             <div class="col-12">
               <div class="table-responsive">
@@ -45,6 +38,7 @@
                     <thead class="table-dark">
                         <tr>
                             <th>ID</th>
+                            <th>OP</th>
                             <th>Tipo documento</th>
                             <th>Número de documento</th>
                             <th>Nombre</th>
@@ -63,6 +57,7 @@
                         {
                             <tr>
                                 <td>@empleado.Id</td>
+                                <th><input type="checkbox" /></th>
                                 <td>@empleado.Documento.TipoDocumento</td>
                                 <td>@empleado.Documento.NumeroDocumento</td>
                                 <td>@empleado.Nombre</td>
@@ -497,6 +492,7 @@
             },
             columns: [
                 { title: "ID", visible: false},
+                { title: null },
                 { title: "Tipo documento" },
                 { title: "Número de documento" },
                 { title: "Nombre" },
