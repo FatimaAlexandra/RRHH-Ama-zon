@@ -12,8 +12,11 @@
                     Agregar empleado
                 </button>
                
-                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Generar acuerdo
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal" onclick="mostrarDatosSeleccionados()">
+                      Generar PDF
+                 </button>
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" asp-controller="Reporte" asp-action="GenerarReporteEmpleados">
+                    <a asp-controller="Reporte" asp-action="GenerarReporteEmpleados">PRUEBA</a>
                 </button>
             </div>            
         </div>
@@ -57,7 +60,7 @@
                         {
                             <tr>
                                 <td>@empleado.Id</td>
-                                <th><input type="checkbox" /></th>
+                                <th><input type="checkbox" onchange="capturarDatos(this)" /></th>
                                 <td>@empleado.Documento.TipoDocumento</td>
                                 <td>@empleado.Documento.NumeroDocumento</td>
                                 <td>@empleado.Nombre</td>
@@ -79,6 +82,73 @@
         </div>
 
     </div>
+
+    @*<button onclick="mostrarDatosSeleccionados()">Generar PDF</button>*@
+    <script>
+        var empleadosSeleccionados = [];
+
+        function capturarDatos(checkbox) {
+            if (checkbox.checked) {
+                var empleadoId = checkbox.parentNode.parentNode.cells[0].innerText;
+                var empleadoTipoDocumento = checkbox.parentNode.parentNode.cells[1].innerText;
+                var empleadoNumeroDocumento = checkbox.parentNode.parentNode.cells[2].innerText;
+                var empleadoNombre = checkbox.parentNode.parentNode.cells[3].innerText;
+                var empleadoCorreo = checkbox.parentNode.parentNode.cells[4].innerText;
+                var empleadoNacimiento = checkbox.parentNode.parentNode.cells[5].innerText;
+                var empleadoTelefono = checkbox.parentNode.parentNode.cells[6].innerText;
+                var empleadoDireccion = checkbox.parentNode.parentNode.cells[7].innerText;
+                var empleadoSede = checkbox.parentNode.parentNode.cells[8].innerText;
+                var empleadoCargo = checkbox.parentNode.parentNode.cells[9].innerText;
+
+                // Captura los demás datos necesarios y añádelos a la variable empleadosSeleccionados
+                empleadosSeleccionados.push({
+                    empleadoId: empleadoId,
+                    empleadoTipoDocumento: empleadoTipoDocumento,
+                    empleadoNumeroDocumento: empleadoNumeroDocumento,
+                    empleadoNombre: empleadoNombre,
+                    empleadoCorreo: empleadoCorreo,
+                    empleadoNacimiento: empleadoNacimiento,
+                    empleadoTelefono: empleadoTelefono,
+                    empleadoDireccion: empleadoDireccion,
+                    empleadoSede: empleadoSede,
+                    empleadoCargo: empleadoCargo
+                });
+            }
+        }
+
+
+        function mostrarDatosSeleccionados() {
+            if (empleadosSeleccionados.length > 0) {
+                var mensaje = "Empleados seleccionados:\n";
+                empleadosSeleccionados.forEach(function (empleado) {
+                    mensaje += "NOMBRE: " + empleado.empleadoNombre + "\n";
+                    mensaje += "ID: " + empleado.empleadoId + "\n";
+                    mensaje += "TIPO DOCUMENTO: " + empleado.empleadoTipoDocumento + "\n";
+                    mensaje += "NÚMERO DOCUMENTO: " + empleado.empleadoNumeroDocumento + "\n";
+                    mensaje += "CORREO: " + empleado.empleadoCorreo + "\n";
+                    mensaje += "FECHA NACIMIENTO: " + empleado.empleadoNacimiento + "\n";
+                    mensaje += "TELÉFONO: " + empleado.empleadoTelefono + "\n";
+                    mensaje += "DIRECCIÓN: " + empleado.empleadoDireccion + "\n";
+                    mensaje += "SEDE: " + empleado.empleadoSede + "\n";
+                    mensaje += "CARGO: " + empleado.empleadoCargo + "\n";
+                    // Agrega el resto de los datos que desees mostrar
+                    mensaje += "\n";
+                });
+                Swal.fire({
+      title: "Empleados seleccionados",
+      text: mensaje,
+      icon: "info",
+    });
+            } else {
+                Swal.fire({
+                    title: "No se han seleccionado empleados",
+                    icon: "warning",
+                });
+            }
+        }
+
+    </script>
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

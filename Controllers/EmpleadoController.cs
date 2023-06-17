@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using amazon.Models.Inputs;
 using amazon.Models.Outputs;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
 
 namespace amazon.Controllers
 {
@@ -27,6 +29,7 @@ namespace amazon.Controllers
             List<Sede> sedes = context.Sedes.ToList();
 
             ViewBag.Empleados = empleados; //guarda objetos y muestra en lista\
+
             ViewBag.Sedes = sedes;
             return View();
         }
@@ -226,5 +229,7 @@ namespace amazon.Controllers
             return Json(empleadoEditado); // Devolver el acuerdo como respuesta JSON
         }
 
+        
+
     }
-}
+    }
