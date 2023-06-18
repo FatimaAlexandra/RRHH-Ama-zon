@@ -15,7 +15,7 @@
                 @*<button type="button" class="btn btn-warning" data-bs-toggle="modal" onclick="mostrarDatosSeleccionados()">
                       Generar PDF
                  </button>*@
-                <button type="button" class="btn btn-danger" data-bs-toggle="modal">
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal">
                     <a asp-controller="Reporte" asp-action="GenerarAcuerdos">Generar Acuerdos</a>
                 </button>
 
@@ -55,6 +55,8 @@
                             <td>Sede</td>
                             <td>CodigoSede</td>
                             <th>Cargo</th>
+                            <th>Fecha contratación</th>
+                            <th>Fecha terminación</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -74,6 +76,8 @@
                                 <td>@empleado.Sede.Nombre</td>
                                 <td>@empleado.Sede.Codigosede</td>
                                 <td>@empleado.Contrato.Cargo</td>
+                                <td>@empleado.Contrato.FechaInicio</td>
+                                <td>@empleado.Contrato.FechaFin</td>
                                 <td></td>
                             </tr>
                         }
@@ -643,7 +647,48 @@
                 { title: "Direccion" },
                 { title: "Sede" },
                 { title: "CodigoSede", visible: false },
-                { title: "Cargo" },
+                { 
+                    title: "Cargo",
+                    render: function (data, type, row) {
+                        if (data == 'gerente') {
+                            return 'Gerente';
+                        }
+                        if (data == 'administrador') {
+                            return 'Administrador';
+                        }
+                        if (data == 'cajero') {
+                            return 'Cajero';
+                        }
+                        if (data == 'limpieza') {
+                            return 'Limpieza';
+                        }
+                        if (data == 'seguridad') {
+                            return 'Seguridad';
+                        }
+                        return data;
+                    }
+                },
+                { 
+                    title: "Fecha contratación",
+                    render: function (data, type, row) {
+                        return data.split(' ')[0].split('/')[1] + '/' + data.split(' ')[0].split('/')[0] + '/' + data.split(' ')[0].split('/')[2];
+                    }
+                },
+                { 
+                    title: "Fecha terminación",
+                    render: function (data, type, row) {
+                        if (data == null) {
+                            return 'Sin fecha';
+                        }
+                        if (data == undefined) {
+                            return 'Sin fecha';
+                        }
+                        if (data == '') {
+                            return 'Sin fecha';
+                        }
+                        return data.split(' ')[0].split('/')[1] + '/' + data.split(' ')[0].split('/')[0] + '/' + data.split(' ')[0].split('/')[2];
+                    }
+                },
                 {
                     render: function (data, type, row) {
                         return `
@@ -656,7 +701,15 @@
                             <button class="btn btn-danger" onclick='borrarEmpleado(${row[0]})'>
                                 <i class="fas fa-trash"></i>
                             </button>
-
+                            <button class="btn btn-secondary" onclick="despedirEmpleado(${row[0]})">
+                                <i class="fa-solid fa-fire"></i>
+                            </button>
+                            <button class="btn btn-success" onclick="ennviarEmailEmpleado(${row[0]})">
+                                <i class="fa-solid fa-envelope"></i>
+                            </button>
+                            <button class="btn btn-warning" onclick="descargarPdfEmpleado(${row[0]})">
+                                <i class="fa-solid fa-file-pdf"></i>
+                            </button>
                         `;
                     }
                 }
@@ -692,6 +745,40 @@
             const editar_modal = document.getElementById("editarModal");
             const editarModal = new bootstrap.Modal(editar_modal);
             editarModal.show();
+        }
+
+        function descargarPdfEmpleado(id){
+            console.log(`/Empleado/DescargarPdfEmpleado/${id}`);
+            $.ajax({
+                url: `/Empleado/DescargarPdfEmpleado/${id}`,
+                type: "POST",
+                xhrFields: {
+                    responseType: 'blob' 
+                },
+                success: function (response) {
+                    // Crear un objeto de URL a partir de la respuesta
+                    var url = window.URL.createObjectURL(response);
+                    
+                    // Crear un enlace de descarga
+                    var a = document.createElement('a');
+                    a.href = url;
+                    a.download = `empleado-${id}.pdf`;
+                    a.style.display = 'none';
+                    
+                    // Agregar el enlace al documento y hacer clic en él para iniciar la descarga
+                    document.body.appendChild(a);
+                    a.click();
+                    
+                    // Liberar el objeto de URL
+                    window.URL.revokeObjectURL(url);
+                    
+                    // Eliminar el enlace del documento
+                    document.body.removeChild(a);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
         }
 
          function borrarEmpleado (idEmpleado) {
@@ -935,6 +1022,91 @@
                     })
                 }
 
+            })
+        }
+
+
+        function despedirEmpleado(id) {
+            Swal.fire({
+                title: '¿Estas seguro?',
+                text: "¡No podrás revertir esto!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Despedir',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: `/Empleado/Despedir/${id}`,
+                        type: "PUT",
+                        xhrFields: {
+                            withCredentials: true
+                        },
+                        success: function (data) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Empleado despedido correctamente',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            setTimeout(() => {
+                                window.location.reload();
+                            }, 1000);
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Error al despedir el empleado',
+                            })
+                        }
+
+                    })
+                }
+            })
+        }
+
+        function ennviarEmailEmpleado(id) {
+            Swal.fire({
+                title: '¿Estas seguro?',
+                text: "¡Se enviara un correo al empleado!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Enviar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: `/Empleado/EnviarEmail/${id}`,
+                        type: "PUT",
+                        xhrFields: {
+                            withCredentials: true
+                        },
+                        success: function (data) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Correo enviado correctamente',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            @* setTimeout(() => {
+                                window.location.reload();
+                            }, 1000); *@
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Error al enviar el correo',
+                            })
+                        }
+
+                    })
+                }
             })
         }
 

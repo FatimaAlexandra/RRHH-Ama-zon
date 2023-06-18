@@ -280,4 +280,9 @@ obj/
 /node_modules
 /wwwroot/node_modules
 
+# Include Visual Studio Code .vscode if you want to check in launch settings
+# .vscode/
+
+/pdfs/**.pdf
+/htmls/**.html
 # End of https://www.toptal.com/developers/gitignore/api/dotnetcore,aspnetcore

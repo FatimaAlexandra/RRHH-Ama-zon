@@ -4,8 +4,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using amazon.Models.Inputs;
 using amazon.Models.Outputs;
+using iText.Html2pdf;
+using System.IO;
 using iTextSharp.text.pdf;
 using iTextSharp.text;
+using System.Text;
+using amazon.Services;
 
 namespace amazon.Controllers
 {
@@ -231,7 +235,119 @@ namespace amazon.Controllers
             return Json(empleadoEditado); // Devolver el acuerdo como respuesta JSON
         }
 
-        
+        [HttpPut("{id}")]
+        [Route("Despedir/{id}")]
+        public IActionResult DespedirEmpleado(int id)
+        {
+            Empleado empleado = context.Empleados
+                .Include(x => x.Contrato)
+                .FirstOrDefault(x => x.Id == id);
+            if (empleado == null)
+            {
+                // Manejar el caso cuando no se encuentra el empleado
+                return NotFound();
+            }
+
+            Contrato contrato = context.Contratos.Find(empleado.Contratoid);
+            if (contrato == null)
+            {
+                // Manejar el caso cuando no se encuentra el contrato
+                return NotFound();
+            }
+            contrato.FechaFin = DateTime.Now;
+
+
+            // save contrato
+            Contrato contratoEditado = context.Contratos.Update(contrato).Entity;
+            context.SaveChanges();
+
+            return Json(empleado); // Devolver el acuerdo como respuesta JSON
+        }
+
+        [HttpPut("{id}")]
+        [Route("EnviarEmail/{id}")]
+        public IActionResult EnviarContrato(int id)
+        {
+            SendEmail EnviarEmail = new SendEmail();
+            var message = EnviarEmail.GenerarPdf(id);
+            EnviarEmail.EnviarEmail(message);
+
+            // return statusode 200
+            return Ok();
+        }
+
+        [HttpPost("{id}")]
+        [Route("DescargarPdfEmpleado/{id}")]
+        public IActionResult DescargarPdfEmpleado(int id)
+        {
+            Empleado empleado = context.Empleados
+                .FirstOrDefault(x => x.Id == id);
+
+
+            if (empleado == null)
+            {
+                // Manejar el caso cuando no se encuentra el empleado
+                return NotFound();
+            }
+
+            Contrato contrato = context.Contratos.Find(empleado.Contratoid);
+            Documento documento = context.Documentos.Find(empleado.Documentoid);
+            Sede sede = context.Sedes.Find(empleado.Sedeid);
+            Acuerdo acuerdo = context.Acuerdos.Find(contrato.Acuerdoid);
+            Paise pais = context.Paises.Find(sede.Paisid);
+
+            EmpleadoPdf empleadoPdf = new EmpleadoPdf();
+            empleadoPdf.empleado = empleado;
+            empleadoPdf.contrato = contrato;
+            empleadoPdf.documento = documento;
+            empleadoPdf.sede = sede;
+            empleadoPdf.acuerdo = acuerdo;
+
+
+            string cssStyle = "html, body {width: 100%;height: 842px; width: 595px; margin-left: auto; margin-right: auto;} body {margin: 20px;}img { width: 100%; } p, h1, h2, h3, h4, h5, h6, span, b, strong, li { width: 100%; word-break: normal; } p, li { text-align: justify;}";
+
+            string htmlContent = "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>PDF</title></head><body>";
+            htmlContent = "<style>" + cssStyle + "</style>";
+            htmlContent = htmlContent + acuerdo.Contenido + "</body></html>";
+
+            htmlContent = htmlContent.Replace("&nbsp;", " ");
+            
+            // remplazar variables: nombre, correo, fecha_nacimiento, telefono, direccion, tipo_documento, numero_documento, fecha_inicio, cargo, tipo_contrato, fecha_fin, sede, pais
+            htmlContent = htmlContent.Replace("[nombre]", empleado.Nombre);
+            htmlContent = htmlContent.Replace("[correo]", empleado.Correo);
+            htmlContent = htmlContent.Replace("[fecha_nacimiento]", empleado.FechaNacimiento.ToString("dd/MM/yyyy"));
+            htmlContent = htmlContent.Replace("[telefono]", empleado.Telefono);
+            htmlContent = htmlContent.Replace("[direccion]", empleado.Direccion);
+            htmlContent = htmlContent.Replace("[tipo_documento]", documento.TipoDocumento);
+            htmlContent = htmlContent.Replace("[numero_documento]", documento.NumeroDocumento);
+            htmlContent = htmlContent.Replace("[fecha_inicio]", contrato.FechaInicio.ToString("dd/MM/yyyy"));
+            htmlContent = htmlContent.Replace("[cargo]", contrato.Cargo);
+            htmlContent = htmlContent.Replace("[tipo_contrato]", acuerdo.Tipo);
+            if (contrato.FechaFin is DateTime fechaFin) {
+                htmlContent = htmlContent.Replace("[fecha_fin]", fechaFin.ToString("dd/MM/yyyy"));
+            }
+            htmlContent = htmlContent.Replace("[sede]", sede.Nombre);
+            htmlContent = htmlContent.Replace("[pais]", pais.Nombre);
+
+            byte[] fileContents = Encoding.UTF8.GetBytes(htmlContent);
+            
+            string fileName = "htmls/empleado-" + id + ".html" ; 
+
+            string filePath = Path.Combine(Directory.GetCurrentDirectory(), fileName);
+            System.IO.File.WriteAllBytes(filePath, fileContents);
+
+
+            // Crear el convertidor
+            ConverterProperties converterProperties = new ConverterProperties();
+
+            MemoryStream pdfStream = new MemoryStream();
+            HtmlConverter.ConvertToPdf(new FileStream(filePath, FileMode.Open), pdfStream, converterProperties);
+            
+            Response.Headers.Add("Content-Disposition", "attachment; filename=empleado-"+id+"-.pdf");
+            Response.ContentType = "application/pdf";
+            
+            return File(pdfStream.ToArray(), "application/pdf");
+        }
 
     }
-    }
+}

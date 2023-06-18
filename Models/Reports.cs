@@ -36,21 +36,23 @@ namespace amazon.Models
 
 
                 string template = empleado.Contrato.Acuerdo.Contenido;
-                template = template.Replace("[Nombre]", empleado.Nombre);
-                template = template.Replace("[TipoDocumento]", empleado.Documento.TipoDocumento);
-                template = template.Replace("[NumeroDocumento]", empleado.Documento.NumeroDocumento);
-                template = template.Replace("[Direccion]", empleado.Direccion);
-                template = template.Replace("[Cargo]", empleado.Direccion);
-                template = template.Replace("[FechaInicio]", empleado.Contrato.FechaInicio.ToString("dd/MM/yyyy"));
+                template = template.Replace("[nombre]", empleado.Nombre);
+                template = template.Replace("[correo]", empleado.Correo);
+                template = template.Replace("[telefono]", empleado.Telefono);
+                template = template.Replace("[tipo_documento]", empleado.Documento.TipoDocumento);
+                template = template.Replace("[numero_documento]", empleado.Documento.NumeroDocumento);
+                template = template.Replace("[direccion]", empleado.Direccion);
+                template = template.Replace("[cargo]", empleado.Direccion);
+                template = template.Replace("[fecha_inicio]", empleado.Contrato.FechaInicio.ToString("dd/MM/yyyy"));
                 if(empleado.Contrato.FechaFin is DateTime fechaFin)
                 {
-                    template = template.Replace("[FechaFin]", fechaFin.ToString("dd/MM/yyyy")); 
+                    template = template.Replace("[fecha_fin]", fechaFin.ToString("dd/MM/yyyy")); 
                 }
-                template = template.Replace("[FechaNacimiento]", empleado.FechaNacimiento.ToString("dd/MM/yyyy"));
-                template = template.Replace("[Pais]", empleado.Sede.Pais.Nombre);
-                template = template.Replace("[Sede]", empleado.Sede.Nombre);
-                template = template.Replace("[TipoContrato]", empleado.Contrato.Acuerdo.Tipo);
-                template = template.Replace("[FechaEmision]", DateTime.Now.ToString());
+                template = template.Replace("[fecha_nacimiento]", empleado.FechaNacimiento.ToString("dd/MM/yyyy"));
+                template = template.Replace("[pais]", empleado.Sede.Pais.Nombre);
+                template = template.Replace("[sede]", empleado.Sede.Nombre);
+                template = template.Replace("[tipo_contrato]", empleado.Contrato.Acuerdo.Tipo);
+                template = template.Replace("[fecha_emision]", DateTime.Now.ToString());
                 template = template.Replace("&nbsp", " ");
 
 
