@@ -39,10 +39,14 @@ namespace amazon.Controllers
 
             var empleadoSeleccionados = _dbContext.Empleados.ToList();
 
-            reportGenerator.GenerarReporteEmpleados(filePath, _dbContext, empleadoSeleccionados);
-
-            byte[] fileBytes = System.IO.File.ReadAllBytes(filePath);
-            return File(fileBytes, "application/pdf", "ReporteEmpleados.pdf");
+            MemoryStream pdfStream = reportGenerator.GenerarReporteEmpleados(filePath, _dbContext, empleadoSeleccionados);
+            
+            // Establecer el tipo de contenido y nombre de archivo en la respuesta
+            Response.Headers.Add("Content-Disposition", "attachment; filename=nombre-archivo.pdf");
+            Response.ContentType = "application/pdf";
+            return File(pdfStream.ToArray(), "application/pdf");
+            // byte[] fileBytes = System.IO.File.ReadAllBytes(filePath);
+            // return File(fileBytes, "application/pdf", "ReporteEmpleados.pdf");
         }
 
        
