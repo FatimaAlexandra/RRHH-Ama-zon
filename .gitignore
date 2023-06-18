@@ -284,5 +284,5 @@ obj/
 # .vscode/
 
 /pdfs/**.pdf
-
+/htmls/**.html
 # End of https://www.toptal.com/developers/gitignore/api/dotnetcore,aspnetcore

@@ -11,8 +11,17 @@
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Agregar empleado
                 </button>
+               
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal" onclick="mostrarDatosSeleccionados()">
+                      Generar PDF
+                 </button>
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" asp-controller="Reporte" asp-action="GenerarReporteEmpleados">
+                    <a asp-controller="Reporte" asp-action="GenerarReporteEmpleados">PRUEBA</a>
+                </button>
+
+
                 
-            </div>
+            </div>            
         </div>
         <div class="mt-3 row">
             <div class="col-6 col-md-3">
@@ -27,17 +36,7 @@
                     </select>
                 </div>
             </div>
-            @* <div class="col-6 col-md-3">
-                <div class="form-group">
-                    <label for="filtro_contrato">Filto contrato</label>
-                    <select id="filtro_contrato" class="form-select form-control" aria-label="Default select example">
-                        <option value="0">Todos</option>
-                        <option value="eventual">Eventual</option>
-                        <option value="permanente">Permanente</option>
-                    </select>
-                </div>
-            </div> *@
-        </div>
+            </div>
         <div class="mt-3 row">
             <div class="col-12">
               <div class="table-responsive">
@@ -45,6 +44,7 @@
                     <thead class="table-dark">
                         <tr>
                             <th>ID</th>
+                            <th>OP</th>
                             <th>Tipo documento</th>
                             <th>Número de documento</th>
                             <th>Nombre</th>
@@ -65,6 +65,7 @@
                         {
                             <tr>
                                 <td>@empleado.Id</td>
+                                <th><input type="checkbox" onchange="capturarDatos(this)" /></th>
                                 <td>@empleado.Documento.TipoDocumento</td>
                                 <td>@empleado.Documento.NumeroDocumento</td>
                                 <td>@empleado.Nombre</td>
@@ -88,6 +89,115 @@
         </div>
 
     </div>
+
+    @*<button onclick="mostrarDatosSeleccionados()">Generar PDF</button>*@
+    <script>
+        var empleadosSeleccionados = [];
+
+        function capturarDatos(checkbox) {
+            if (checkbox.checked) {
+                var empleadoId = checkbox.parentNode.parentNode.cells[0].innerText;
+                var empleadoTipoDocumento = checkbox.parentNode.parentNode.cells[2].innerText;
+                var empleadoNumeroDocumento = checkbox.parentNode.parentNode.cells[3].innerText;
+                var empleadoNombre = checkbox.parentNode.parentNode.cells[4].innerText;
+                var empleadoCorreo = checkbox.parentNode.parentNode.cells[5].innerText;
+                var empleadoNacimiento = checkbox.parentNode.parentNode.cells[6].innerText;
+                var empleadoTelefono = checkbox.parentNode.parentNode.cells[7].innerText;
+                var empleadoDireccion = checkbox.parentNode.parentNode.cells[8].innerText;
+                var empleadoSede = checkbox.parentNode.parentNode.cells[9].innerText;
+                var empleadoCargo = checkbox.parentNode.parentNode.cells[10].innerText;
+
+                // Captura los demás datos necesarios y añádelos a la variable empleadosSeleccionados
+                empleadosSeleccionados.push({
+                    empleadoId: empleadoId,
+                    empleadoTipoDocumento: empleadoTipoDocumento,
+                    empleadoNumeroDocumento: empleadoNumeroDocumento,
+                    empleadoNombre: empleadoNombre,
+                    empleadoCorreo: empleadoCorreo,
+                    empleadoNacimiento: empleadoNacimiento,
+                    empleadoTelefono: empleadoTelefono,
+                    empleadoDireccion: empleadoDireccion,
+                    empleadoSede: empleadoSede,
+                    empleadoCargo: empleadoCargo
+                });
+            }
+        }
+
+
+        function mostrarDatosSeleccionados() {
+            if (empleadosSeleccionados.length > 0) {
+                var mensaje = "Empleados seleccionados:\n";
+                empleadosSeleccionados.forEach(function (empleado) {
+                    mensaje += "NOMBRE: " + empleado.empleadoNombre + "\n";
+                    mensaje += "ID: " + empleado.empleadoId + "\n";
+                    mensaje += "TIPO DOCUMENTO: " + empleado.empleadoTipoDocumento + "\n";
+                    mensaje += "NÚMERO DOCUMENTO: " + empleado.empleadoNumeroDocumento + "\n";
+                    mensaje += "CORREO: " + empleado.empleadoCorreo + "\n";
+                    mensaje += "FECHA NACIMIENTO: " + empleado.empleadoNacimiento + "\n";
+                    mensaje += "TELÉFONO: " + empleado.empleadoTelefono + "\n";
+                    mensaje += "DIRECCIÓN: " + empleado.empleadoDireccion + "\n";
+                    mensaje += "SEDE: " + empleado.empleadoSede + "\n";
+                    mensaje += "CARGO: " + empleado.empleadoCargo + "\n";
+                    // Agrega el resto de los datos que desees mostrar
+                    mensaje += "\n";
+                });
+                Swal.fire({
+                  title: "Empleados seleccionados",
+                  text: mensaje,
+                  icon: "info",
+                });
+
+                $.ajax({
+                    url: '/Reporte/GenerarDatosEmpleado',
+                    data: {empleados: JSON.stringify(empleadosSeleccionados), esperado: "Chucho"},
+                    type: 'Post',
+                    dataType: 'json',
+                    cache: false,
+                }).done(function (resp) {
+                    alert(resp);
+                }).fail(function () {
+
+                });
+
+
+            } else {
+                Swal.fire({
+                    title: "No se han seleccionado empleados",
+                    icon: "warning",
+                });
+            }
+
+        }
+
+
+
+    </script>
+    @*<script src="ruta/a/FileSaver.js"></script>
+    <script>
+        function generarReporte() {
+            if (empleadosSeleccionados.length > 0) {
+                $.ajax({
+                    url: '/Reporte/GenerarReporteEmpleados',
+                    type: 'POST',
+                    data: { empleados: empleadosSeleccionados },
+                    responseType: 'blob',
+                    success: function (response) {
+                        var blob = new Blob([response]);
+                        saveAs(blob, 'reporte.pdf');
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: "No se han seleccionado empleados",
+                    icon: "warning",
+                });
+            }
+        }
+    </script>*@
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -500,7 +610,8 @@
                 $("#tabla_empleados thead tr").clone().appendTo($("#tabla_empleados tfoot"));
             },
             columns: [
-                { title: "ID", visible: false},
+                { title: "ID"},
+                { title: null },
                 { title: "Tipo documento" },
                 { title: "Número de documento" },
                 { title: "Nombre" },
@@ -575,6 +686,9 @@
                             <button class="btn btn-success" onclick="ennviarEmailEmpleado(${row[0]})">
                                 <i class="fa-solid fa-envelope"></i>
                             </button>
+                            <button class="btn btn-warning" onclick="descargarPdfEmpleado(${row[0]})">
+                                <i class="fa-solid fa-file-pdf"></i>
+                            </button>
                         `;
                     }
                 }
@@ -610,6 +724,40 @@
             const editar_modal = document.getElementById("editarModal");
             const editarModal = new bootstrap.Modal(editar_modal);
             editarModal.show();
+        }
+
+        function descargarPdfEmpleado(id){
+            console.log(`/Empleado/DescargarPdfEmpleado/${id}`);
+            $.ajax({
+                url: `/Empleado/DescargarPdfEmpleado/${id}`,
+                type: "POST",
+                xhrFields: {
+                    responseType: 'blob' 
+                },
+                success: function (response) {
+                    // Crear un objeto de URL a partir de la respuesta
+                    var url = window.URL.createObjectURL(response);
+                    
+                    // Crear un enlace de descarga
+                    var a = document.createElement('a');
+                    a.href = url;
+                    a.download = `empleado-${id}.pdf`;
+                    a.style.display = 'none';
+                    
+                    // Agregar el enlace al documento y hacer clic en él para iniciar la descarga
+                    document.body.appendChild(a);
+                    a.click();
+                    
+                    // Liberar el objeto de URL
+                    window.URL.revokeObjectURL(url);
+                    
+                    // Eliminar el enlace del documento
+                    document.body.removeChild(a);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
         }
 
          function borrarEmpleado (idEmpleado) {
