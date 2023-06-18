@@ -34,6 +34,8 @@ namespace amazon.Controllers
             return View();
         }
 
+        
+
         [HttpGet("{id}")]
         [Route("Obtener/{id}")]
         public ActionResult Obetener(int id)

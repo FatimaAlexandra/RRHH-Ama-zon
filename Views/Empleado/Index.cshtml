@@ -18,6 +18,9 @@
                 <button type="button" class="btn btn-success" data-bs-toggle="modal" asp-controller="Reporte" asp-action="GenerarReporteEmpleados">
                     <a asp-controller="Reporte" asp-action="GenerarReporteEmpleados">PRUEBA</a>
                 </button>
+
+
+                
             </div>            
         </div>
         <div class="mt-3 row">
@@ -90,15 +93,15 @@
         function capturarDatos(checkbox) {
             if (checkbox.checked) {
                 var empleadoId = checkbox.parentNode.parentNode.cells[0].innerText;
-                var empleadoTipoDocumento = checkbox.parentNode.parentNode.cells[1].innerText;
-                var empleadoNumeroDocumento = checkbox.parentNode.parentNode.cells[2].innerText;
-                var empleadoNombre = checkbox.parentNode.parentNode.cells[3].innerText;
-                var empleadoCorreo = checkbox.parentNode.parentNode.cells[4].innerText;
-                var empleadoNacimiento = checkbox.parentNode.parentNode.cells[5].innerText;
-                var empleadoTelefono = checkbox.parentNode.parentNode.cells[6].innerText;
-                var empleadoDireccion = checkbox.parentNode.parentNode.cells[7].innerText;
-                var empleadoSede = checkbox.parentNode.parentNode.cells[8].innerText;
-                var empleadoCargo = checkbox.parentNode.parentNode.cells[9].innerText;
+                var empleadoTipoDocumento = checkbox.parentNode.parentNode.cells[2].innerText;
+                var empleadoNumeroDocumento = checkbox.parentNode.parentNode.cells[3].innerText;
+                var empleadoNombre = checkbox.parentNode.parentNode.cells[4].innerText;
+                var empleadoCorreo = checkbox.parentNode.parentNode.cells[5].innerText;
+                var empleadoNacimiento = checkbox.parentNode.parentNode.cells[6].innerText;
+                var empleadoTelefono = checkbox.parentNode.parentNode.cells[7].innerText;
+                var empleadoDireccion = checkbox.parentNode.parentNode.cells[8].innerText;
+                var empleadoSede = checkbox.parentNode.parentNode.cells[9].innerText;
+                var empleadoCargo = checkbox.parentNode.parentNode.cells[10].innerText;
 
                 // Captura los demás datos necesarios y añádelos a la variable empleadosSeleccionados
                 empleadosSeleccionados.push({
@@ -135,10 +138,53 @@
                     mensaje += "\n";
                 });
                 Swal.fire({
-      title: "Empleados seleccionados",
-      text: mensaje,
-      icon: "info",
-    });
+                  title: "Empleados seleccionados",
+                  text: mensaje,
+                  icon: "info",
+                });
+
+                $.ajax({
+                    url: '/Reporte/GenerarDatosEmpleado',
+                    data: {empleados: JSON.stringify(empleadosSeleccionados), esperado: "Chucho"},
+                    type: 'Post',
+                    dataType: 'json',
+                    cache: false,
+                }).done(function (resp) {
+                    alert(resp);
+                }).fail(function () {
+
+                });
+
+
+            } else {
+                Swal.fire({
+                    title: "No se han seleccionado empleados",
+                    icon: "warning",
+                });
+            }
+
+        }
+
+
+
+    </script>
+    @*<script src="ruta/a/FileSaver.js"></script>
+    <script>
+        function generarReporte() {
+            if (empleadosSeleccionados.length > 0) {
+                $.ajax({
+                    url: '/Reporte/GenerarReporteEmpleados',
+                    type: 'POST',
+                    data: { empleados: empleadosSeleccionados },
+                    responseType: 'blob',
+                    success: function (response) {
+                        var blob = new Blob([response]);
+                        saveAs(blob, 'reporte.pdf');
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
             } else {
                 Swal.fire({
                     title: "No se han seleccionado empleados",
@@ -146,8 +192,7 @@
                 });
             }
         }
-
-    </script>
+    </script>*@
 
 
 <!-- Modal -->
@@ -561,7 +606,7 @@
                 $("#tabla_empleados thead tr").clone().appendTo($("#tabla_empleados tfoot"));
             },
             columns: [
-                { title: "ID", visible: false},
+                { title: "ID"},
                 { title: null },
                 { title: "Tipo documento" },
                 { title: "Número de documento" },

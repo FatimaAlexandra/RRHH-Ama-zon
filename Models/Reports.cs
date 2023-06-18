@@ -9,9 +9,9 @@ namespace amazon.Models
 {
     public class Reports
     {
-        public void GenerarReporteEmpleados(string ruta, DbamazonContext _dbContext, List<Empleado> empleadosSeleccionados)
+        public void GenerarReporteEmpleados(string ruta, DbamazonContext _dbContext, List<Empleado> empleadosSeleccionados, Document document)
         {
-            Document document = new Document();
+            //Document document = new Document();
             PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(ruta, FileMode.Create));
             document.Open();
 
@@ -26,41 +26,7 @@ namespace amazon.Models
             // Agregar logo y elementos
             document.Add(logo);
 
-            // Agregar contenido al PDF
-            PdfPTable table = new PdfPTable(11);
-            table.WidthPercentage = 100;
-
-            // Agregar encabezados de columna
-            CellHeaderTable("ID", document, table);
-            CellHeaderTable("Tipo Documento", document, table);
-            CellHeaderTable("Número Documento", document, table);
-            CellHeaderTable("Nombre", document, table);
-            CellHeaderTable("Correo", document, table);
-            CellHeaderTable("Fecha Nacimiento", document, table);
-            CellHeaderTable("Teléfono", document, table);
-            CellHeaderTable("Dirección", document, table);
-            //CellHeaderTable("Sede", document, table);
-            //CellHeaderTable("Código Sede", document, table);
-            CellHeaderTable("Cargo", document, table);
-
-            // Agregar filas al PDF con los datos de empleados seleccionados
-            foreach (var empleado in empleadosSeleccionados)
-            {
-                table.AddCell(empleado.Id.ToString());
-                table.AddCell(empleado.Documento.TipoDocumento);
-                table.AddCell(empleado.Documento.NumeroDocumento);
-                table.AddCell(empleado.Nombre);
-                table.AddCell(empleado.Correo);
-                table.AddCell(empleado.FechaNacimiento.ToString());
-                table.AddCell(empleado.Telefono);
-                table.AddCell(empleado.Direccion);
-                //table.AddCell(empleado..Sede);
-                //table.AddCell(empleado.Codigosede);
-                table.AddCell(empleado.Contrato.Cargo);
-            }
-
-            // Agregar la tabla al documento PDF
-            document.Add(table);
+            TContenidoEmpleado(empleadosSeleccionados, document);
             document.Close();
         }
 
@@ -94,5 +60,48 @@ namespace amazon.Models
             document.Add(headerParagraph);
             document.Add(fecha);
         }
+
+        private void TContenidoEmpleado(List<Empleado> empleadosSeleccionados, Document document)
+        {
+            // Agregar contenido al PDF
+            PdfPTable table = new PdfPTable(11);
+            table.WidthPercentage = 100;
+
+            // Agregar encabezados de columna
+            CellHeaderTable("ID", document, table);
+            CellHeaderTable("Tipo Documento", document, table);
+            CellHeaderTable("Número Documento", document, table);
+            CellHeaderTable("Nombre", document, table);
+            CellHeaderTable("Correo", document, table);
+            CellHeaderTable("Fecha Nacimiento", document, table);
+            CellHeaderTable("Teléfono", document, table);
+            CellHeaderTable("Dirección", document, table);
+            //CellHeaderTable("Sede", document, table);
+            //CellHeaderTable("Código Sede", document, table);
+            CellHeaderTable("Cargo", document, table);
+
+            // Agregar filas al PDF con los datos de empleados seleccionados
+            foreach (var empleado in empleadosSeleccionados)
+            {
+                table.AddCell(empleado.Id.ToString());
+                table.AddCell(empleado.Documento.TipoDocumento);
+                table.AddCell(empleado.Documento.NumeroDocumento);
+                table.AddCell(empleado.Nombre);
+                table.AddCell(empleado.Correo);
+                table.AddCell(empleado.FechaNacimiento.ToString());
+                table.AddCell(empleado.Telefono);
+                table.AddCell(empleado.Direccion);
+                //table.AddCell(empleado..Sede);
+                //table.AddCell(empleado.Codigosede);
+                table.AddCell(empleado.Contrato.Cargo);
+            }
+           
+
+            // Agregar la tabla al documento PDF
+            document.Add(table);
+        }
+
+
+
     }
 }
