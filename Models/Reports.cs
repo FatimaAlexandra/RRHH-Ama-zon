@@ -41,8 +41,8 @@ namespace amazon.Models
                 .FirstOrDefault(e => e.Id == emp.Id);
 
                 
-                htmlContent += "<div style=\"display:flex;justify-content: space-between;clear:both;\"><figure style=\"float:left;\"><img style=\"width: 100px;\" src=\"wwwroot/images/" + empleado.Sede.Pais.Isocode +".png\" alt=\"Logo-Amazon-El-Salvador\" border=\"0\"></figure><figure style=\"display:flex;justify-content: end;float:right;\"><img style=\"width: 100px;\" src=\"wwwroot/images/Logo.png\" alt=\"Logo-Amazon-El-Salvador\" border=\"0\"></figure></div>";
-                
+                htmlContent += "<div style=\"clear:both;\"><figure style=\"float:left;\"><img style=\"width: 100px;\" src=\"wwwroot/images/" + empleado.Sede.Pais.Isocode +".png\" alt=\"Logo-Amazon-El-Salvador\" border=\"0\"></figure><figure style=\"float:right;\"><img style=\"width: 100px;\" src=\"wwwroot/images/Logo.png\" alt=\"Logo-Amazon-El-Salvador\" border=\"0\"></figure></div>";
+                htmlContent += "<div style=\"clear: both;\"></div>";
                 
                 htmlContent += empleado.Contrato.Acuerdo.Contenido;                
                 htmlContent = htmlContent.Replace("&nbsp;", " ");
