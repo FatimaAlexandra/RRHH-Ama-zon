@@ -269,8 +269,86 @@ namespace amazon.Controllers
         public IActionResult EnviarContrato(int id)
         {
             SendEmail EnviarEmail = new SendEmail();
-            var message = EnviarEmail.GenerarPdf(id);
+            Empleado empleado = context.Empleados
+                .FirstOrDefault(x => x.Id == id);
+
+            HtmlToPdf converter = new HtmlToPdf();
+            string filePath = converter.GenerarPdfStream(empleado);
+
+            // Crear el convertidor
+            ConverterProperties converterProperties = new ConverterProperties();
+
+            MemoryStream pdfStream = new MemoryStream();
+            // HtmlConverter.ConvertToPdf(new FileStream(filePath, FileMode.Open), pdfStream, converterProperties);
+            using (FileStream htmlFileStream = new FileStream(filePath, FileMode.Open))
+            {
+                HtmlConverter.ConvertToPdf(htmlFileStream, pdfStream, converterProperties);
+            }
+
+            // Guardar el MemoryStream en un archivo
+            string outputFilePath = Path.Combine(Directory.GetCurrentDirectory(), "pdfs/empleado-" + id + ".pdf");
+            FileStream outputFileStream = new FileStream(outputFilePath, FileMode.Create);
+            byte[] contenido = pdfStream.ToArray();
+            outputFileStream.Write(contenido, 0, contenido.Length);
+            outputFileStream.Close();
+
+            var message = EnviarEmail.GenerarPdf(id, outputFilePath);
             EnviarEmail.EnviarEmail(message);
+            // return statusode 200
+            return Ok();
+        }
+
+        [HttpPost]
+        [Route("EnviarPdfs")]
+        public IActionResult EnviarPdfs([FromBody] CorreosInput input)
+        {
+            // comprobar si hay ids
+            if (input.Ids == null)
+            {
+                // retornar 400
+                return BadRequest();
+            }
+            // recorrer ids
+            foreach (int id in input.Ids)
+            {
+                // buscar empleado
+                Empleado empleado = context.Empleados
+                    .FirstOrDefault(x => x.Id == id);
+
+                // comprobar si existe empleado
+                if (empleado == null)
+                {
+                    // retornar 404
+                    continue;
+                } else {
+                    // generar pdf
+                    HtmlToPdf converter = new HtmlToPdf();
+                    string filePath = converter.GenerarPdfStream(empleado);
+
+                    // Crear el convertidor
+                    ConverterProperties converterProperties = new ConverterProperties();
+
+                    MemoryStream pdfStream = new MemoryStream();
+                    // HtmlConverter.ConvertToPdf(new FileStream(filePath, FileMode.Open), pdfStream, converterProperties);
+                    using (FileStream htmlFileStream = new FileStream(filePath, FileMode.Open))
+                    {
+                        HtmlConverter.ConvertToPdf(htmlFileStream, pdfStream, converterProperties);
+                    }
+
+                    // Guardar el MemoryStream en un archivo
+                    string outputFilePath = Path.Combine(Directory.GetCurrentDirectory(), "pdfs/empleado-" + id + ".pdf");
+                    FileStream outputFileStream = new FileStream(outputFilePath, FileMode.Create);
+                    byte[] contenido = pdfStream.ToArray();
+                    outputFileStream.Write(contenido, 0, contenido.Length);
+                    outputFileStream.Close();
+
+                    // enviar email
+                    SendEmail EnviarEmail = new SendEmail();
+                    var message = EnviarEmail.GenerarPdf(id, outputFilePath);
+                    EnviarEmail.EnviarEmail(message);
+                }
+                
+            }
 
             // return statusode 200
             return Ok();
@@ -289,64 +367,31 @@ namespace amazon.Controllers
                 // Manejar el caso cuando no se encuentra el empleado
                 return NotFound();
             }
+            HtmlToPdf converter = new HtmlToPdf();
 
-            Contrato contrato = context.Contratos.Find(empleado.Contratoid);
-            Documento documento = context.Documentos.Find(empleado.Documentoid);
-            Sede sede = context.Sedes.Find(empleado.Sedeid);
-            Acuerdo acuerdo = context.Acuerdos.Find(contrato.Acuerdoid);
-            Paise pais = context.Paises.Find(sede.Paisid);
-
-            EmpleadoPdf empleadoPdf = new EmpleadoPdf();
-            empleadoPdf.empleado = empleado;
-            empleadoPdf.contrato = contrato;
-            empleadoPdf.documento = documento;
-            empleadoPdf.sede = sede;
-            empleadoPdf.acuerdo = acuerdo;
-
-
-            string cssStyle = "html, body {width: 100%;height: 842px; width: 595px; margin-left: auto; margin-right: auto;} body {margin: 20px;}img { width: 100%; } p, h1, h2, h3, h4, h5, h6, span, b, strong, li { width: 100%; word-break: normal; } p, li { text-align: justify;}";
-
-            string htmlContent = "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>PDF</title></head><body>";
-            htmlContent = "<style>" + cssStyle + "</style>";
-            htmlContent = htmlContent + acuerdo.Contenido + "</body></html>";
-
-            htmlContent = htmlContent.Replace("&nbsp;", " ");
-            
-            // remplazar variables: nombre, correo, fecha_nacimiento, telefono, direccion, tipo_documento, numero_documento, fecha_inicio, cargo, tipo_contrato, fecha_fin, sede, pais
-            htmlContent = htmlContent.Replace("[nombre]", empleado.Nombre);
-            htmlContent = htmlContent.Replace("[correo]", empleado.Correo);
-            htmlContent = htmlContent.Replace("[fecha_nacimiento]", empleado.FechaNacimiento.ToString("dd/MM/yyyy"));
-            htmlContent = htmlContent.Replace("[telefono]", empleado.Telefono);
-            htmlContent = htmlContent.Replace("[direccion]", empleado.Direccion);
-            htmlContent = htmlContent.Replace("[tipo_documento]", documento.TipoDocumento);
-            htmlContent = htmlContent.Replace("[numero_documento]", documento.NumeroDocumento);
-            htmlContent = htmlContent.Replace("[fecha_inicio]", contrato.FechaInicio.ToString("dd/MM/yyyy"));
-            htmlContent = htmlContent.Replace("[cargo]", contrato.Cargo);
-            htmlContent = htmlContent.Replace("[tipo_contrato]", acuerdo.Tipo);
-            if (contrato.FechaFin is DateTime fechaFin) {
-                htmlContent = htmlContent.Replace("[fecha_fin]", fechaFin.ToString("dd/MM/yyyy"));
-            }
-            htmlContent = htmlContent.Replace("[sede]", sede.Nombre);
-            htmlContent = htmlContent.Replace("[pais]", pais.Nombre);
-
-            byte[] fileContents = Encoding.UTF8.GetBytes(htmlContent);
-            
-            string fileName = "htmls/empleado-" + id + ".html" ; 
-
-            string filePath = Path.Combine(Directory.GetCurrentDirectory(), fileName);
-            System.IO.File.WriteAllBytes(filePath, fileContents);
-
+            string filePath = converter.GenerarPdfStream(empleado);
 
             // Crear el convertidor
             ConverterProperties converterProperties = new ConverterProperties();
 
             MemoryStream pdfStream = new MemoryStream();
-            HtmlConverter.ConvertToPdf(new FileStream(filePath, FileMode.Open), pdfStream, converterProperties);
-            
+            // HtmlConverter.ConvertToPdf(new FileStream(filePath, FileMode.Open), pdfStream, converterProperties);
+            using (FileStream htmlFileStream = new FileStream(filePath, FileMode.Open))
+            {
+                HtmlConverter.ConvertToPdf(htmlFileStream, pdfStream, converterProperties);
+            }
+
+            // Guardar el MemoryStream en un archivo
+            string outputFilePath = Path.Combine(Directory.GetCurrentDirectory(), "pdfs/empleado-" + id + ".pdf");
+            FileStream outputFileStream = new FileStream(outputFilePath, FileMode.Create);
+            byte[] contenido = pdfStream.ToArray();
+            outputFileStream.Write(contenido, 0, contenido.Length);
+            outputFileStream.Close();
+
             Response.Headers.Add("Content-Disposition", "attachment; filename=empleado-"+id+"-.pdf");
             Response.ContentType = "application/pdf";
             
-            return File(pdfStream.ToArray(), "application/pdf");
+            return File(contenido, "application/pdf");
         }
 
     }

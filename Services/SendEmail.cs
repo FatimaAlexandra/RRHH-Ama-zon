@@ -19,7 +19,7 @@ namespace amazon.Services{
             client.Disconnect(true);
         }
 
-        public  dynamic GenerarPdf (int empleadoId) {
+        public  dynamic GenerarPdf (int empleadoId, string fileName) {
             Empleado empleado = context.Empleados
                 .Include(x => x.Contrato)
                     .ThenInclude(x => x.Acuerdo)
@@ -34,11 +34,11 @@ namespace amazon.Services{
 
             var builder = new BodyBuilder();
 
-            string html = empleado.Contrato.Acuerdo.Contenido;
+            // string html = empleado.Contrato.Acuerdo.Contenido;
 
             // Logica aqui pare remplazar los datos del empleado en el html
             string cuerpo = @"
-<p>Estimado/a {{nombre_empleado}},</p>
+<p>Estimado/a [nombre],</p>
 
 <p>Esperamos que esté bien.</p>
 
@@ -51,18 +51,42 @@ Apreciamos su atención a este asunto y esperamos tener una relación laboral pr
 
 Atentamente,</p>
 
-
 <p>Departamento de Recursos Humanos<p>
             ";
-            cuerpo  = cuerpo.Replace("{{nombre_empleado}}", empleado.Nombre);
-            builder.HtmlBody = cuerpo;
-            // relative path root/pdfs/
-            string destino = "pdfs/empleado-" + empleadoId + ".pdf";
-            new HtmlToPdf().ConvertHtmlToPdf(html, destino);
-            builder.Attachments.Add(destino);
-            message.Body = builder.ToMessageBody();
-            
 
+            cuerpo = cuerpo.Replace("[nombre]", empleado.Nombre);
+
+            builder.HtmlBody = cuerpo;
+
+
+             // Establecer el tipo de contenido HTML en el encabezado del mensaje
+            var htmlEntity = new TextPart("html")
+            {
+                Text = builder.HtmlBody
+            };
+
+            var alternative = new Multipart("alternative");
+            alternative.Add(htmlEntity);
+            // Crear el contenido mixto (para adjuntos)
+            var mixed = new Multipart("mixed");
+            mixed.Add(alternative);
+
+            if(File.Exists(fileName)) {
+                // builder.Attachments.Add(fileName);
+                var attachment = new MimePart()
+                {
+                    Content = new MimeContent(File.OpenRead(fileName), ContentEncoding.Default),
+                    ContentDisposition = new ContentDisposition(ContentDisposition.Attachment),
+                    ContentTransferEncoding = ContentEncoding.Base64,
+                    FileName = Path.GetFileName(fileName)
+                };
+                mixed.Add(attachment);
+            }
+
+
+            // message.Body = builder.ToMessageBody();
+            message.Body = mixed;
+            
             return message;
         }
 
