@@ -82,7 +82,8 @@ namespace amazon.Controllers
                 SedeId  = empleado.Sede.Id,
                 Telefono = empleado.Telefono,
                 TipoContrato = acuerdo.Tipo, 
-                TipoDocumento = documento.TipoDocumento
+                TipoDocumento = documento.TipoDocumento,
+                Salario = empleado.Salario
             };
             return Json(empleadoOutputModel);
         }
@@ -155,6 +156,7 @@ namespace amazon.Controllers
                 Sedeid = input.SedeId,
                 Documentoid = documentoCreado.Id,
                 Contratoid = contratoCreado.Id,
+                Salario = input.Salario
             };
 
 
@@ -227,6 +229,7 @@ namespace amazon.Controllers
             empleado.Sedeid = input.SedeId;
             empleado.Documentoid = documentoEditado.Id;
             empleado.Contratoid = contratoEditado.Id;
+            empleado.Salario = input.Salario;
 
             // Guardar el acuerdo en la base de datos o realizar otras operaciones necesarias
             Empleado empleadoEditado = context.Empleados.Update(empleado).Entity;

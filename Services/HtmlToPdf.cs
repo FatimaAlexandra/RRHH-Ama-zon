@@ -49,6 +49,12 @@ namespace amazon.Services{
             htmlContent = htmlContent.Replace("[sede]", sede.Nombre);
             htmlContent = htmlContent.Replace("[pais]", pais.Nombre);
             htmlContent = htmlContent.Replace("[fecha_emision]", DateTime.Now.ToString("dd/MM/yyyy"));
+            
+            if (empleado.Salario is null) {
+                htmlContent = htmlContent.Replace("[salario]", "No especificado");
+            } else {
+                htmlContent = htmlContent.Replace("[salario]", empleado.Salario);
+            }
 
             byte[] fileContents = Encoding.UTF8.GetBytes(htmlContent);
             

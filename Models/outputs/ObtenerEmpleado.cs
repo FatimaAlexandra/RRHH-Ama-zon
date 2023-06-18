@@ -17,5 +17,6 @@ namespace amazon.Models.Outputs;
         public string Cargo { get; set; } = null!;
         public DateTime FechaInicio { get; set; }
         public int Id { get; set; }
+        public string? Salario { get; set; }
         
     }

@@ -298,11 +298,18 @@
             </div>
         </div>
         <div class="row mt-3">
-            <div class="col-12">
+            <div class="col-8">
                 <!-- Fecha de nacimiento -->
                 <div class="form-group">
                     <label for="direccion">Dirección</label>
                     <input type="text" class="form-control" id="direccion" placeholder="Dirección">
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <!-- Fecha de nacimiento -->
+                <div class="form-group">
+                    <label for="salario">Salario</label>
+                    <input type="text" class="form-control" id="salario" placeholder="Salario">
                 </div>
             </div>
         </div>
@@ -430,11 +437,18 @@
             </div>
         </div>
         <div class="row mt-3">
-            <div class="col-12">
+            <div class="col-8">
                 <!-- Fecha de nacimiento -->
                 <div class="form-group">
                     <label for="editar_direccion">Dirección</label>
                     <input type="text" class="form-control" id="editar_direccion" placeholder="Dirección">
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <!-- Fecha de nacimiento -->
+                <div class="form-group">
+                    <label for="editar_salario">Salario</label>
+                    <input type="text" class="form-control" id="editar_salario" placeholder="Salario">
                 </div>
             </div>
         </div>
@@ -563,11 +577,18 @@
             </div>
         </div>
         <div class="row mt-3">
-            <div class="col-12">
+            <div class="col-8">
                 <!-- Fecha de nacimiento -->
                 <div class="form-group">
                     <label for="mostrar_direccion">Dirección</label>
                     <input type="text" class="form-control" id="mostrar_direccion" placeholder="Dirección" readonly>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <!-- Fecha de nacimiento -->
+                <div class="form-group">
+                    <label for="mostrar_salario">Salario</label>
+                    <input type="text" class="form-control" id="mostrar_salario" placeholder="Salario" readonly>
                 </div>
             </div>
         </div>
@@ -770,6 +791,7 @@
                     $("#editar_numero_documento").val(response.numeroDocumento);
                     $("#editar_tipo_contrato").val(response.tipoContrato);
                     $("#editar_cargo_contrato").val(response.cargo);
+                    $("#editar_salario").val(response.salario);
                     $("#editar_fecha_inicio_contrato").val(response.fechaInicio);
 
                 },
@@ -870,6 +892,7 @@
                     $("#mostrar_sede").val(data.sedeId);
                     $("#mostrar_cargo").val(data.cargo);
                     $("#mostrar_fecha_inicio_contrato").val(data.fechaInicio);
+                    $("#mostrar_salario").val(data.salario);
                     $("#mostrarModal").modal("show");
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
@@ -907,7 +930,8 @@
                 NumeroDocumento: $("#numero_documento").val(),
                 TipoContrato: $("#tipo_contrato").val(),
                 Cargo: $("#cargo_contrato").val(),
-                FechaInicio: $("#fecha_inicio_contrato").val()
+                FechaInicio: $("#fecha_inicio_contrato").val(),
+                Salario: $("#salario").val()
             }
 
             if (data.Nombre == undefined || data.FechaNacimiento == undefined || data.Correo == undefined || data.Telefono == undefined || data.Direccion == undefined || data.SedeId == undefined || data.TipoDocumento == undefined || data.NumeroDocumento == undefined || data.TipoContrato == undefined || data.Cargo == undefined || data.FechaInicio == undefined) {
@@ -991,7 +1015,8 @@
                 NumeroDocumento: $("#editar_numero_documento").val(),
                 TipoContrato: $("#editar_tipo_contrato").val(),
                 Cargo: $("#editar_cargo_contrato").val(),
-                FechaInicio: $("#editar_fecha_inicio_contrato").val()
+                FechaInicio: $("#editar_fecha_inicio_contrato").val(),
+                Salario: $("#editar_salario").val()
             }
             console.log(data)
             if (data.Nombre == undefined || data.FechaNacimiento == undefined || data.Correo == undefined || data.Telefono == undefined || data.Direccion == undefined || data.SedeId == undefined || data.TipoDocumento == undefined || data.NumeroDocumento == undefined || data.TipoContrato == undefined || data.Cargo == undefined || data.FechaInicio == undefined) {
