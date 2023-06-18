@@ -15,32 +15,31 @@ namespace amazon.Controllers
         DbamazonContext _dbContext = new DbamazonContext();
         // Crear el objeto Document
         Document document = new Document();
-        List<Empleado> empleadosSeleccionados = new List<Empleado>(); // Aquí debes tener la lista de empleados seleccionados
+        List<Object> empleadosSeleccionados = new List<Object>(); // Aquí debes tener la lista de empleados seleccionados
 
 
         [HttpPost]
-        public IActionResult GenerarDatosEmpleado(string empleados, string esperado)
+        public async Task<IActionResult> GenerarDatosEmpleado(string empleados, string esperado)
         {
             List<Object> emps = JsonSerializer.Deserialize<List<Object>>(empleados);
 
-            foreach (var emp in emps)
-            {
-                //
+            var reportGenerator = new Reports();
+            var filePath = "archivo.pdf";
+            //await Task.Run(() => reportGenerator.GenerarReporteEmpleados(filePath, _dbContext, emps));
 
-            }
-
-            return Json(emps);
+            byte[] fileBytes = await System.IO.File.ReadAllBytesAsync(filePath);
+            return File(fileBytes, "application/pdf", "ReporteEmpleados.pdf");
         }
 
-        [HttpPost]
-        public IActionResult GenerarReporteEmpleados()
+        
+        public IActionResult GenerarAcuerdos()
         {
             var reportGenerator = new Reports();
             var filePath = "archivo.pdf";
 
+            var empleadoSeleccionados = _dbContext.Empleados.ToList();
 
-
-            reportGenerator.GenerarReporteEmpleados(filePath, _dbContext, empleadosSeleccionados, document);
+            reportGenerator.GenerarReporteEmpleados(filePath, _dbContext, empleadoSeleccionados);
 
             byte[] fileBytes = System.IO.File.ReadAllBytes(filePath);
             return File(fileBytes, "application/pdf", "ReporteEmpleados.pdf");

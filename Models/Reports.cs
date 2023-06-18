@@ -9,26 +9,75 @@ namespace amazon.Models
 {
     public class Reports
     {
-        public void GenerarReporteEmpleados(string ruta, DbamazonContext _dbContext, List<Empleado> empleadosSeleccionados, Document document)
+        public void GenerarReporteEmpleados(string ruta, DbamazonContext _dbContext, List<Empleado> empleados)
         {
-            //Document document = new Document();
+            Document document = new Document();
             PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(ruta, FileMode.Create));
             document.Open();
 
             Header("Empleado", document);
 
-            // Logo
-            string ruta_logo = "wwwroot/images/Logo.png";
-            iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(ruta_logo);
-            logo.ScaleToFit(100, 100);
-            logo.SetAbsolutePosition(50, 800);
+            Logo("SV", document);
 
-            // Agregar logo y elementos
-            document.Add(logo);
+            foreach (Empleado emp in empleados)
+            {
+                Empleado empleado = _dbContext.Empleados
+                    .Include(e => e.Contrato)
+                    .ThenInclude(c => c.Acuerdo)
+                    .Include(e => e.Documento)
+                    .Include(e => e.Sede)
+                    .ThenInclude(s => s.Pais)
+                    .Include(e => e.Contrato)
 
-            TContenidoEmpleado(empleadosSeleccionados, document);
+                .FirstOrDefault(e => e.Id == emp.Id);
+
+                document.NewPage();
+                Header(empleado.Nombre, document);
+
+
+                string template = empleado.Contrato.Acuerdo.Contenido;
+                template = template.Replace("[Nombre]", empleado.Nombre);
+                template = template.Replace("[TipoDocumento]", empleado.Documento.TipoDocumento);
+                template = template.Replace("[NumeroDocumento]", empleado.Documento.NumeroDocumento);
+                template = template.Replace("[Direccion]", empleado.Direccion);
+                template = template.Replace("[Cargo]", empleado.Direccion);
+                template = template.Replace("[FechaInicio]", empleado.Contrato.FechaInicio.ToString("dd/MM/yyyy"));
+                //template = template.Replace("[FechaFin]", empleado.Contrato.FechaFin.ToString("dd/MM/yyyy")); 
+                template = template.Replace("[FechaNacimiento]", empleado.FechaNacimiento.ToString("dd/MM/yyyy"));
+                template = template.Replace("[Pais]", empleado.Sede.Pais.Nombre);
+                template = template.Replace("[Sede]", empleado.Sede.Nombre);
+                template = template.Replace("[FechaEmision]", DateTime.Now.ToString());
+
+
+                Logo(empleado.Sede.Pais.Isocode, document);
+
+                Paragraph espacio = new Paragraph("");
+                espacio.Add(Environment.NewLine);
+                espacio.Add(Environment.NewLine);
+                espacio.Add(Environment.NewLine);
+
+                Paragraph plantilla = new Paragraph(template);
+                //plantilla.Alignment = Element.ALIGN_RIGHT;
+                //plantilla.Add(Environment.NewLine);
+                //plantilla.Add(Environment.NewLine);
+              
+         
+
+                plantilla.Font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 17);
+
+                document.Add(espacio);
+                document.Add(plantilla);
+            }
+
+
+
+
             document.Close();
+
+            // nuevo -----
+
         }
+
 
         private void CellHeaderTable(string nombre, Document document, PdfPTable table)
         {
@@ -37,6 +86,18 @@ namespace amazon.Models
             cell.PaddingBottom = 5f;
             cell.BackgroundColor = new iTextSharp.text.BaseColor(33, 51, 99);
             table.AddCell(cell);
+        }
+
+        private void Logo(string file,  Document document)
+        {
+            // Logo
+            string ruta_logo = "wwwroot/images/" + file + ".png";
+            iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(ruta_logo);
+            logo.ScaleToFit(100, 100);
+            logo.SetAbsolutePosition(50, 700);
+
+            // Agregar logo y elementos
+            document.Add(logo);
         }
 
         private void Header(string titulo, Document document)
@@ -60,47 +121,6 @@ namespace amazon.Models
             document.Add(headerParagraph);
             document.Add(fecha);
         }
-
-        private void TContenidoEmpleado(List<Empleado> empleadosSeleccionados, Document document)
-        {
-            // Agregar contenido al PDF
-            PdfPTable table = new PdfPTable(11);
-            table.WidthPercentage = 100;
-
-            // Agregar encabezados de columna
-            CellHeaderTable("ID", document, table);
-            CellHeaderTable("Tipo Documento", document, table);
-            CellHeaderTable("Número Documento", document, table);
-            CellHeaderTable("Nombre", document, table);
-            CellHeaderTable("Correo", document, table);
-            CellHeaderTable("Fecha Nacimiento", document, table);
-            CellHeaderTable("Teléfono", document, table);
-            CellHeaderTable("Dirección", document, table);
-            //CellHeaderTable("Sede", document, table);
-            //CellHeaderTable("Código Sede", document, table);
-            CellHeaderTable("Cargo", document, table);
-
-            // Agregar filas al PDF con los datos de empleados seleccionados
-            foreach (var empleado in empleadosSeleccionados)
-            {
-                table.AddCell(empleado.Id.ToString());
-                table.AddCell(empleado.Documento.TipoDocumento);
-                table.AddCell(empleado.Documento.NumeroDocumento);
-                table.AddCell(empleado.Nombre);
-                table.AddCell(empleado.Correo);
-                table.AddCell(empleado.FechaNacimiento.ToString());
-                table.AddCell(empleado.Telefono);
-                table.AddCell(empleado.Direccion);
-                //table.AddCell(empleado..Sede);
-                //table.AddCell(empleado.Codigosede);
-                table.AddCell(empleado.Contrato.Cargo);
-            }
-           
-
-            // Agregar la tabla al documento PDF
-            document.Add(table);
-        }
-
 
 
     }
