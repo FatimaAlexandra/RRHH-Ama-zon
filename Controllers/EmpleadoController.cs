@@ -313,21 +313,21 @@ namespace amazon.Controllers
             htmlContent = htmlContent.Replace("&nbsp;", " ");
             
             // remplazar variables: nombre, correo, fecha_nacimiento, telefono, direccion, tipo_documento, numero_documento, fecha_inicio, cargo, tipo_contrato, fecha_fin, sede, pais
-            htmlContent = htmlContent.Replace("{{nombre}}", empleado.Nombre);
-            htmlContent = htmlContent.Replace("{{correo}}", empleado.Correo);
-            htmlContent = htmlContent.Replace("{{fecha_nacimiento}}", empleado.FechaNacimiento.ToString("dd/MM/yyyy"));
-            htmlContent = htmlContent.Replace("{{telefono}}", empleado.Telefono);
-            htmlContent = htmlContent.Replace("{{direccion}}", empleado.Direccion);
-            htmlContent = htmlContent.Replace("{{tipo_documento}}", documento.TipoDocumento);
-            htmlContent = htmlContent.Replace("{{numero_documento}}", documento.NumeroDocumento);
-            htmlContent = htmlContent.Replace("{{fecha_inicio}}", contrato.FechaInicio.ToString("dd/MM/yyyy"));
-            htmlContent = htmlContent.Replace("{{cargo}}", contrato.Cargo);
-            htmlContent = htmlContent.Replace("{{tipo_contrato}}", acuerdo.Tipo);
+            htmlContent = htmlContent.Replace("[nombre]", empleado.Nombre);
+            htmlContent = htmlContent.Replace("[correo]", empleado.Correo);
+            htmlContent = htmlContent.Replace("[fecha_nacimiento]", empleado.FechaNacimiento.ToString("dd/MM/yyyy"));
+            htmlContent = htmlContent.Replace("[telefono]", empleado.Telefono);
+            htmlContent = htmlContent.Replace("[direccion]", empleado.Direccion);
+            htmlContent = htmlContent.Replace("[tipo_documento]", documento.TipoDocumento);
+            htmlContent = htmlContent.Replace("[numero_documento]", documento.NumeroDocumento);
+            htmlContent = htmlContent.Replace("[fecha_inicio]", contrato.FechaInicio.ToString("dd/MM/yyyy"));
+            htmlContent = htmlContent.Replace("[cargo]", contrato.Cargo);
+            htmlContent = htmlContent.Replace("[tipo_contrato]", acuerdo.Tipo);
             if (contrato.FechaFin is DateTime fechaFin) {
-                htmlContent = htmlContent.Replace("{{fecha_fin}}", fechaFin.ToString("dd/MM/yyyy"));
+                htmlContent = htmlContent.Replace("[fecha_fin]", fechaFin.ToString("dd/MM/yyyy"));
             }
-            htmlContent = htmlContent.Replace("{{sede}}", sede.Nombre);
-            htmlContent = htmlContent.Replace("{{pais}}", pais.Nombre);
+            htmlContent = htmlContent.Replace("[sede]", sede.Nombre);
+            htmlContent = htmlContent.Replace("[pais]", pais.Nombre);
 
             byte[] fileContents = Encoding.UTF8.GetBytes(htmlContent);
             
