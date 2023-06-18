@@ -15,8 +15,8 @@
                 <button type="button" class="btn btn-warning" data-bs-toggle="modal" onclick="mostrarDatosSeleccionados()">
                       Generar PDF
                  </button>
-                <button type="button" class="btn btn-success" data-bs-toggle="modal" asp-controller="Reporte" asp-action="GenerarReporteEmpleados">
-                    <a asp-controller="Reporte" asp-action="GenerarReporteEmpleados">PRUEBA</a>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal">
+                    <a asp-controller="Reporte" asp-action="GenerarAcuerdos">Generar Acuerdos</a>
                 </button>
 
 
@@ -147,16 +147,37 @@
                   icon: "info",
                 });
 
+                //$.ajax({
+                //    url: '/Reporte/GenerarDatosEmpleado',
+                //    data: {empleados: JSON.stringify(empleadosSeleccionados), esperado: "Chucho"},
+                //    type: 'Post',
+                //    dataType: 'json',
+                //    cache: false,
+                //}).done(function (resp) {
+                //    console.log(resp);
+                //    // Crear un objeto Blob a partir de los datos recibidos
+                    
+                //}).fail(function () {
+
+                //});
+
                 $.ajax({
                     url: '/Reporte/GenerarDatosEmpleado',
-                    data: {empleados: JSON.stringify(empleadosSeleccionados), esperado: "Chucho"},
-                    type: 'Post',
-                    dataType: 'json',
-                    cache: false,
-                }).done(function (resp) {
-                    alert(resp);
-                }).fail(function () {
+                    type: 'POST',
+                    data: { empleados: JSON.stringify(empleadosSeleccionados), esperado: "Chucho" },
+                    responseType: 'blob',
+                    success: function (response) {
+                        var blob = new Blob([response], { type: 'application/pdf' });
 
+                        // Crear una URL del objeto Blob
+                        var url = URL.createObjectURL(blob);
+
+                        // Abrir una nueva pestaña del navegador con el archivo PDF
+                        window.open(url);
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
                 });
 
 
