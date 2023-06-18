@@ -95,30 +95,11 @@
         function capturarDatos(checkbox) {
             if (checkbox.checked) {
                 var empleadoId = checkbox.parentNode.parentNode.cells[0].innerText;
-                // var empleadoTipoDocumento = checkbox.parentNode.parentNode.cells[2].innerText;
-                // var empleadoNumeroDocumento = checkbox.parentNode.parentNode.cells[3].innerText;
-                // var empleadoNombre = checkbox.parentNode.parentNode.cells[4].innerText;
-                // var empleadoCorreo = checkbox.parentNode.parentNode.cells[5].innerText;
-                // var empleadoNacimiento = checkbox.parentNode.parentNode.cells[6].innerText;
-                // var empleadoTelefono = checkbox.parentNode.parentNode.cells[7].innerText;
-                // var empleadoDireccion = checkbox.parentNode.parentNode.cells[8].innerText;
-                // var empleadoSede = checkbox.parentNode.parentNode.cells[9].innerText;
-                // var empleadoCargo = checkbox.parentNode.parentNode.cells[10].innerText;
+           
 
                 // Captura los demás datos necesarios y añádelos a la variable empleadosSeleccionados
                 empleadosSeleccionados.push(parseInt(empleadoId));
-                // empleadosSeleccionados.push({
-                    // empleadoId: empleadoId,
-                    // empleadoTipoDocumento: empleadoTipoDocumento,
-                    // empleadoNumeroDocumento: empleadoNumeroDocumento,
-                    // empleadoNombre: empleadoNombre,
-                    // empleadoCorreo: empleadoCorreo,
-                    // empleadoNacimiento: empleadoNacimiento,
-                //     empleadoTelefono: empleadoTelefono,
-                //     empleadoDireccion: empleadoDireccion,
-                //     empleadoSede: empleadoSede,
-                //     empleadoCargo: empleadoCargo
-                // });
+                
             }
         }
 
@@ -197,24 +178,6 @@
 
                 
 
-                // $.ajax({
-                //     url: '/Reporte/GenerarDatosEmpleado',
-                //     type: 'POST',
-                //     data: { empleados: JSON.stringify(empleadosSeleccionados), esperado: "Chucho" },
-                //     responseType: 'blob',
-                //     success: function (response) {
-                //         var blob = new Blob([response], { type: 'application/pdf' });
-
-                //         // Crear una URL del objeto Blob
-                //         var url = URL.createObjectURL(blob);
-
-                //         // Abrir una nueva pestaña del navegador con el archivo PDF
-                //         window.open(url);
-                //     },
-                //     error: function (error) {
-                //         console.log(error);
-                //     }
-                // });
 
 
             } else {
@@ -229,31 +192,7 @@
 
 
     </script>
-    @*<script src="ruta/a/FileSaver.js"></script>
-    <script>
-        function generarReporte() {
-            if (empleadosSeleccionados.length > 0) {
-                $.ajax({
-                    url: '/Reporte/GenerarReporteEmpleados',
-                    type: 'POST',
-                    data: { empleados: empleadosSeleccionados },
-                    responseType: 'blob',
-                    success: function (response) {
-                        var blob = new Blob([response]);
-                        saveAs(blob, 'reporte.pdf');
-                    },
-                    error: function (error) {
-                        console.log(error);
-                    }
-                });
-            } else {
-                Swal.fire({
-                    title: "No se han seleccionado empleados",
-                    icon: "warning",
-                });
-            }
-        }
-    </script>*@
+   
 
 
 <!-- Modal -->

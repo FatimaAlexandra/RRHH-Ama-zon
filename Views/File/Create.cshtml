@@ -1,4 +1,6 @@
 ﻿
+<link rel="stylesheet" href="ruta-a-tu-archivo/sweetalert2.min.css">
+<script src="ruta-a-tu-archivo/sweetalert2.min.js"></script>
 
 <main class="mt-2">
 
@@ -13,3 +15,14 @@
     </form>
 </div>
 </main>
+@if (TempData["successMessage"] != null)
+{
+    <script>
+        Swal.fire({
+            title: '¡Éxito!',
+            text: '@TempData["successMessage"]',
+            icon: 'success',
+            confirmButtonText: 'Aceptar'
+        });
+    </script>
+}

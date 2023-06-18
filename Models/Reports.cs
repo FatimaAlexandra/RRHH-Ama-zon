@@ -72,42 +72,7 @@ namespace amazon.Models
                 }
 
                 htmlContent += "<div class=\"new-page\"></div>";
-                // document.NewPage();
-                // Header(empleado.Nombre, document);
-
-
-                // string template = empleado.Contrato.Acuerdo.Contenido;
-                // template = template.Replace("[Nombre]", empleado.Nombre);
-                // template = template.Replace("[TipoDocumento]", empleado.Documento.TipoDocumento);
-                // template = template.Replace("[NumeroDocumento]", empleado.Documento.NumeroDocumento);
-                // template = template.Replace("[Direccion]", empleado.Direccion);
-                // template = template.Replace("[Cargo]", empleado.Direccion);
-                // template = template.Replace("[FechaInicio]", empleado.Contrato.FechaInicio.ToString("dd/MM/yyyy"));
-                // //template = template.Replace("[FechaFin]", empleado.Contrato.FechaFin.ToString("dd/MM/yyyy")); 
-                // template = template.Replace("[FechaNacimiento]", empleado.FechaNacimiento.ToString("dd/MM/yyyy"));
-                // template = template.Replace("[Pais]", empleado.Sede.Pais.Nombre);
-                // template = template.Replace("[Sede]", empleado.Sede.Nombre);
-                // template = template.Replace("[FechaEmision]", DateTime.Now.ToString());
-
-
-                // Logo(empleado.Sede.Pais.Isocode, document);
-
-                // Paragraph espacio = new Paragraph("");
-                // espacio.Add(Environment.NewLine);
-                // espacio.Add(Environment.NewLine);
-                // espacio.Add(Environment.NewLine);
-
-                // Paragraph plantilla = new Paragraph(template);
-                // //plantilla.Alignment = Element.ALIGN_RIGHT;
-                // //plantilla.Add(Environment.NewLine);
-                // //plantilla.Add(Environment.NewLine);
-              
-         
-
-                // plantilla.Font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 17);
-
-                // document.Add(espacio);
-                // document.Add(plantilla);
+                
             }
 
             htmlContent = htmlContent + "</body></html>";

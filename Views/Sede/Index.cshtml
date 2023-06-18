@@ -33,7 +33,7 @@
                     <thead class="table-dark">
                         <tr>
                             <th>ID</th>
-                            <th>Logo</th>
+                         @*   <th>Logo</th>*@
                             <th>Nombre</th>
                             <th>Codigo sede</th>
                             <th>País</th>
@@ -46,7 +46,7 @@
                         {
                             <tr>
                                 <td>@sede.Id</td>
-                                <td>@sede.Logo</td>
+                             @*   <td>@sede.Logo</td>*@
                                 <td>@sede.Nombre</td>
                                 <td>@sede.Codigosede</td>
                                 <td>@sede.Pais.Nombre</td>
@@ -236,17 +236,17 @@
             },
             columns: [
                 { title: "ID", visible: false},
-                { 
-                    title: "Logo", 
-                    render: function(data, type, row) {
-                        try {
-                            new URL(row[1]);
-                            return `<img src="${row[1]}" width="50" height="50" />`;
-                        } catch (error) {
-                            return `<img src="~/images/placeholder.png" width="50" height="50" />`;
-                        }
-                    }
-                },
+                //{ 
+                //    title: "Logo", 
+                //    render: function(data, type, row) {
+                //        try {
+                //            new URL(row[1]);
+                //            return `<img src="${row[1]}" width="50" height="50" />`;
+                //        } catch (error) {
+                //            return `<img src="~/images/placeholder.png" width="50" height="50" />`;
+                //        }
+                //    }
+                //},
                 { title: "Nombre" },
                 { title: "Codigo sede" },
                 { title: "País" },
