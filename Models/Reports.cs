@@ -42,11 +42,16 @@ namespace amazon.Models
                 template = template.Replace("[Direccion]", empleado.Direccion);
                 template = template.Replace("[Cargo]", empleado.Direccion);
                 template = template.Replace("[FechaInicio]", empleado.Contrato.FechaInicio.ToString("dd/MM/yyyy"));
-                //template = template.Replace("[FechaFin]", empleado.Contrato.FechaFin.ToString("dd/MM/yyyy")); 
+                if(empleado.Contrato.FechaFin is DateTime fechaFin)
+                {
+                    template = template.Replace("[FechaFin]", fechaFin.ToString("dd/MM/yyyy")); 
+                }
                 template = template.Replace("[FechaNacimiento]", empleado.FechaNacimiento.ToString("dd/MM/yyyy"));
                 template = template.Replace("[Pais]", empleado.Sede.Pais.Nombre);
                 template = template.Replace("[Sede]", empleado.Sede.Nombre);
+                template = template.Replace("[TipoContrato]", empleado.Contrato.Acuerdo.Tipo);
                 template = template.Replace("[FechaEmision]", DateTime.Now.ToString());
+                template = template.Replace("&nbsp", " ");
 
 
                 Logo(empleado.Sede.Pais.Isocode, document);
@@ -57,10 +62,7 @@ namespace amazon.Models
                 espacio.Add(Environment.NewLine);
 
                 Paragraph plantilla = new Paragraph(template);
-                //plantilla.Alignment = Element.ALIGN_RIGHT;
-                //plantilla.Add(Environment.NewLine);
-                //plantilla.Add(Environment.NewLine);
-              
+
          
 
                 plantilla.Font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 17);
