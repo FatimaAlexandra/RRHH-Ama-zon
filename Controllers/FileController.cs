@@ -58,6 +58,7 @@ namespace amazon.Controllers
                         empleado.FechaNacimiento = DateTime.Parse(valores[2]); // 2 => fecha nacimiento
                         empleado.Telefono = valores[3]; // 3 => telefono
                         empleado.Direccion = valores[4]; // 4 => direccion
+                        empleado.Salario = valores[12]; // 12 => salario
                         
                         Sede sede = _context.Sedes.FirstOrDefault(s => s.Codigosede == valores[5]); // 5 => codigo sede
                         
