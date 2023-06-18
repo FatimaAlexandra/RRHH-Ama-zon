@@ -65,6 +65,12 @@ namespace amazon.Models
                 htmlContent = htmlContent.Replace("[pais]", empleado.Sede.Pais.Nombre);
                 htmlContent = htmlContent.Replace("[fecha_emision]", DateTime.Now.ToString());
 
+                if (empleado.Salario is null) {
+                    htmlContent = htmlContent.Replace("[salario]", "No especificado");
+                } else {
+                    htmlContent = htmlContent.Replace("[salario]", empleado.Salario.ToString());
+                }
+
                 htmlContent += "<div class=\"new-page\"></div>";
                 // document.NewPage();
                 // Header(empleado.Nombre, document);

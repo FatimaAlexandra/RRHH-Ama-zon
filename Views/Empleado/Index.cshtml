@@ -18,8 +18,6 @@
                 <button type="button" class="btn btn-warning" data-bs-toggle="modal">
                     <a asp-controller="Reporte" asp-action="GenerarAcuerdos">Generar Acuerdos</a>
                 </button>
-
-
                 
             </div>            
         </div>
@@ -97,29 +95,30 @@
         function capturarDatos(checkbox) {
             if (checkbox.checked) {
                 var empleadoId = checkbox.parentNode.parentNode.cells[0].innerText;
-                var empleadoTipoDocumento = checkbox.parentNode.parentNode.cells[2].innerText;
-                var empleadoNumeroDocumento = checkbox.parentNode.parentNode.cells[3].innerText;
-                var empleadoNombre = checkbox.parentNode.parentNode.cells[4].innerText;
-                var empleadoCorreo = checkbox.parentNode.parentNode.cells[5].innerText;
-                var empleadoNacimiento = checkbox.parentNode.parentNode.cells[6].innerText;
-                var empleadoTelefono = checkbox.parentNode.parentNode.cells[7].innerText;
-                var empleadoDireccion = checkbox.parentNode.parentNode.cells[8].innerText;
-                var empleadoSede = checkbox.parentNode.parentNode.cells[9].innerText;
-                var empleadoCargo = checkbox.parentNode.parentNode.cells[10].innerText;
+                // var empleadoTipoDocumento = checkbox.parentNode.parentNode.cells[2].innerText;
+                // var empleadoNumeroDocumento = checkbox.parentNode.parentNode.cells[3].innerText;
+                // var empleadoNombre = checkbox.parentNode.parentNode.cells[4].innerText;
+                // var empleadoCorreo = checkbox.parentNode.parentNode.cells[5].innerText;
+                // var empleadoNacimiento = checkbox.parentNode.parentNode.cells[6].innerText;
+                // var empleadoTelefono = checkbox.parentNode.parentNode.cells[7].innerText;
+                // var empleadoDireccion = checkbox.parentNode.parentNode.cells[8].innerText;
+                // var empleadoSede = checkbox.parentNode.parentNode.cells[9].innerText;
+                // var empleadoCargo = checkbox.parentNode.parentNode.cells[10].innerText;
 
                 // Captura los demás datos necesarios y añádelos a la variable empleadosSeleccionados
-                empleadosSeleccionados.push({
-                    empleadoId: empleadoId,
-                    empleadoTipoDocumento: empleadoTipoDocumento,
-                    empleadoNumeroDocumento: empleadoNumeroDocumento,
-                    empleadoNombre: empleadoNombre,
-                    empleadoCorreo: empleadoCorreo,
-                    empleadoNacimiento: empleadoNacimiento,
-                    empleadoTelefono: empleadoTelefono,
-                    empleadoDireccion: empleadoDireccion,
-                    empleadoSede: empleadoSede,
-                    empleadoCargo: empleadoCargo
-                });
+                empleadosSeleccionados.push(parseInt(empleadoId));
+                // empleadosSeleccionados.push({
+                    // empleadoId: empleadoId,
+                    // empleadoTipoDocumento: empleadoTipoDocumento,
+                    // empleadoNumeroDocumento: empleadoNumeroDocumento,
+                    // empleadoNombre: empleadoNombre,
+                    // empleadoCorreo: empleadoCorreo,
+                    // empleadoNacimiento: empleadoNacimiento,
+                //     empleadoTelefono: empleadoTelefono,
+                //     empleadoDireccion: empleadoDireccion,
+                //     empleadoSede: empleadoSede,
+                //     empleadoCargo: empleadoCargo
+                // });
             }
         }
 
@@ -161,24 +160,61 @@
 
                 //});
 
-                $.ajax({
-                    url: '/Reporte/GenerarDatosEmpleado',
-                    type: 'POST',
-                    data: { empleados: JSON.stringify(empleadosSeleccionados), esperado: "Chucho" },
-                    responseType: 'blob',
-                    success: function (response) {
-                        var blob = new Blob([response], { type: 'application/pdf' });
-
-                        // Crear una URL del objeto Blob
-                        var url = URL.createObjectURL(blob);
-
-                        // Abrir una nueva pestaña del navegador con el archivo PDF
-                        window.open(url);
-                    },
-                    error: function (error) {
-                        console.log(error);
+                Swal.fire({
+                    title: '¿Estás seguro?',
+                    text: "Se enviaran correos masivos",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Sí, enviar',
+                    cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: "/Empleado/EnviarPdfs",
+                            type: "POST",
+                            contentType: "application/json",
+                            xhrFields: {
+                                withCredentials: true
+                            },
+                            data: JSON.stringify({ Ids: empleadosSeleccionados }),
+                            success: function (response) {
+                                console.log(response);
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Correo enviado correctamente',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                            },
+                            error: function (error) {
+                                console.log(error);
+                            }
+                        })
                     }
-                });
+                })
+
+                
+
+                // $.ajax({
+                //     url: '/Reporte/GenerarDatosEmpleado',
+                //     type: 'POST',
+                //     data: { empleados: JSON.stringify(empleadosSeleccionados), esperado: "Chucho" },
+                //     responseType: 'blob',
+                //     success: function (response) {
+                //         var blob = new Blob([response], { type: 'application/pdf' });
+
+                //         // Crear una URL del objeto Blob
+                //         var url = URL.createObjectURL(blob);
+
+                //         // Abrir una nueva pestaña del navegador con el archivo PDF
+                //         window.open(url);
+                //     },
+                //     error: function (error) {
+                //         console.log(error);
+                //     }
+                // });
 
 
             } else {
@@ -262,11 +298,18 @@
             </div>
         </div>
         <div class="row mt-3">
-            <div class="col-12">
+            <div class="col-8">
                 <!-- Fecha de nacimiento -->
                 <div class="form-group">
                     <label for="direccion">Dirección</label>
                     <input type="text" class="form-control" id="direccion" placeholder="Dirección">
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <!-- Fecha de nacimiento -->
+                <div class="form-group">
+                    <label for="salario">Salario</label>
+                    <input type="text" class="form-control" id="salario" placeholder="Salario">
                 </div>
             </div>
         </div>
@@ -394,11 +437,18 @@
             </div>
         </div>
         <div class="row mt-3">
-            <div class="col-12">
+            <div class="col-8">
                 <!-- Fecha de nacimiento -->
                 <div class="form-group">
                     <label for="editar_direccion">Dirección</label>
                     <input type="text" class="form-control" id="editar_direccion" placeholder="Dirección">
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <!-- Fecha de nacimiento -->
+                <div class="form-group">
+                    <label for="editar_salario">Salario</label>
+                    <input type="text" class="form-control" id="editar_salario" placeholder="Salario">
                 </div>
             </div>
         </div>
@@ -527,11 +577,18 @@
             </div>
         </div>
         <div class="row mt-3">
-            <div class="col-12">
+            <div class="col-8">
                 <!-- Fecha de nacimiento -->
                 <div class="form-group">
                     <label for="mostrar_direccion">Dirección</label>
                     <input type="text" class="form-control" id="mostrar_direccion" placeholder="Dirección" readonly>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <!-- Fecha de nacimiento -->
+                <div class="form-group">
+                    <label for="mostrar_salario">Salario</label>
+                    <input type="text" class="form-control" id="mostrar_salario" placeholder="Salario" readonly>
                 </div>
             </div>
         </div>
@@ -734,6 +791,7 @@
                     $("#editar_numero_documento").val(response.numeroDocumento);
                     $("#editar_tipo_contrato").val(response.tipoContrato);
                     $("#editar_cargo_contrato").val(response.cargo);
+                    $("#editar_salario").val(response.salario);
                     $("#editar_fecha_inicio_contrato").val(response.fechaInicio);
 
                 },
@@ -834,6 +892,7 @@
                     $("#mostrar_sede").val(data.sedeId);
                     $("#mostrar_cargo").val(data.cargo);
                     $("#mostrar_fecha_inicio_contrato").val(data.fechaInicio);
+                    $("#mostrar_salario").val(data.salario);
                     $("#mostrarModal").modal("show");
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
@@ -871,7 +930,8 @@
                 NumeroDocumento: $("#numero_documento").val(),
                 TipoContrato: $("#tipo_contrato").val(),
                 Cargo: $("#cargo_contrato").val(),
-                FechaInicio: $("#fecha_inicio_contrato").val()
+                FechaInicio: $("#fecha_inicio_contrato").val(),
+                Salario: $("#salario").val()
             }
 
             if (data.Nombre == undefined || data.FechaNacimiento == undefined || data.Correo == undefined || data.Telefono == undefined || data.Direccion == undefined || data.SedeId == undefined || data.TipoDocumento == undefined || data.NumeroDocumento == undefined || data.TipoContrato == undefined || data.Cargo == undefined || data.FechaInicio == undefined) {
@@ -955,7 +1015,8 @@
                 NumeroDocumento: $("#editar_numero_documento").val(),
                 TipoContrato: $("#editar_tipo_contrato").val(),
                 Cargo: $("#editar_cargo_contrato").val(),
-                FechaInicio: $("#editar_fecha_inicio_contrato").val()
+                FechaInicio: $("#editar_fecha_inicio_contrato").val(),
+                Salario: $("#editar_salario").val()
             }
             console.log(data)
             if (data.Nombre == undefined || data.FechaNacimiento == undefined || data.Correo == undefined || data.Telefono == undefined || data.Direccion == undefined || data.SedeId == undefined || data.TipoDocumento == undefined || data.NumeroDocumento == undefined || data.TipoContrato == undefined || data.Cargo == undefined || data.FechaInicio == undefined) {

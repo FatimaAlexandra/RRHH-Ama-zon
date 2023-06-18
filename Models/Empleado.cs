@@ -15,6 +15,8 @@ public partial class Empleado
 
     public string Telefono { get; set; } = null!;
 
+    public string? Salario { get; set; }
+
     public string Direccion { get; set; } = null!;
 
     public int Sedeid { get; set; }

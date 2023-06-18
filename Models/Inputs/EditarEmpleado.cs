@@ -15,4 +15,5 @@ namespace amazon.Models.Inputs;
         public string TipoContrato { get; set; } = null!;
         public string Cargo { get; set; } = null!;
         public DateTime FechaInicio { get; set; }
+        public string? Salario { get; set; }
     }
